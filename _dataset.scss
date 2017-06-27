@@ -1,0 +1,189 @@
+
+div.dataset {}
+div.dataset input, div.dataset select, div.dataset textarea {font-family:verdana;font-size:11px;background-color:#fff;border:1px solid #eee;border-radius:3px;padding:2px;width:200px}
+div.dataset textarea {width:95%;height:100px}
+div.dataset input[type=checkbox], div.dataset input[type=radio] {width:auto;vertical-align:middle;margin-right:10px}
+div.dataset a.button {background-color:#FFF; color:#000; font-weight: bold;display:inline-block;border:2px solid #000;min-width:4em;cursor:pointer;padding:3px 10px;text-align:center;user-select: none;-moz-user-select: none}
+div.dataset a.button:hover, div.dataset span:hover a.button {background-color:#000;color:#FFF;text-decoration:none}
+div.dataset a.button img {vertical-align:middle;}
+
+div.dataset .loading1 {background-image: url("/img/dataset/ajax-loader-4.gif") !important;}
+
+div.dataset div.table {position:relative}
+div.dataset div.back {margin-bottom:10px;position:relative}
+div.dataset div.block {margin-bottom:5px;position:relative}
+div.dataset div.info {background-color:#eee;margin:10px 10px 10px 20px;padding:5px 10px;color:#444;border:1px solid #ccc;border-radius:4px;font-style:italic;}
+
+/*div.dataset div.header {background-color:#ddd;padding:5px 10px;border-radius:5px;user-select: none;-moz-user-select: none;}*/
+div.dataset div.header {color:#000;padding:5px 10px;user-select: none;-moz-user-select: none;border-top:2px solid #333;background-image: linear-gradient(to bottom, #EEE, #fff)}
+div.dataset div.header span.logged {float:right;margin-right:10px;font-style:italic;font-size:1.1em}
+/*div.dataset div.block:first-child div.header {border-top: 0 none;}*/			/* if remove menuTools */
+div.dataset span.title {line-height:22px;font-size:1.2em;font-weight:bold}		/* line-height: to match buttons */
+div.dataset span.openclose {cursor:pointer;background: url("/img/dataset/caret_right.png") no-repeat scroll 0px center transparent;padding-left: 20px;}
+div.dataset span.open {background-image: url("/img/dataset/caret_down.png")}
+div.dataset div.buttons {position:absolute;right:10px;top:7px}
+
+/* general rules for table dataset */
+div.dataset table {width: 100%;margin:10px 0}
+
+div.dataset table.autocolumns1 th.dataset {width:33%}
+div.dataset table.autocolumns1 td.dataset {width:67%}
+div.dataset table.autocolumns2 th.dataset {width:16%}
+div.dataset table.autocolumns2 td.dataset {width:33%}
+
+div.dataset table th.dataset, div.dataset table td.dataset {border-color:#ccc #fff; border-style:solid; border-width: 1px 5px 1px 0;padding:5px; vertical-align:middle}
+div.dataset table th.dataset {color:#444; border-color:#666 #fff; text-align:left; font-style:italic; font-weight: normal}
+
+div.dataset table.table tbody tr {cursor:pointer}
+div.dataset table.data th.dataset {text-align:right;border-color:#fff;padding-right:10px;vertical-align:top}
+div.dataset div.address_artist table.data th.dataset, div.dataset div.address_studio table.data th.dataset {vertical-align:middle}
+div.dataset table.data td.dataset {min-height:17px}					/* to keep same height when editing */
+div.dataset table.data td.dataset {vertical-align: top;}					/* 20150206 to align top because of russian.... */
+
+div.dataset ul.tree {margin:10px}
+div.dataset ul.tree ul.line{padding:3px 10px;border-bottom:1px solid #ccc;overflow:hidden}
+div.dataset ul.tree ul.line:hover{background-color:#eee}
+div.dataset ul.tree li.close > ul.leaf{display:none}
+div.dataset ul.tree ul.line li{float:right;height:1.5em;line-height:1.5em;min-width:60px;text-align:center}
+div.dataset ul.tree ul.line li.count0, div.dataset ul.tree ul.line li.count1{float:left;min-width:0px;text-align:left}
+
+div.dataset ul.tree ul.line li.count1{padding-left:15px}
+div.dataset ul.tree li.openclose > ul.line > li.count1{cursor:pointer;user-select: none;-moz-user-select: none;background: url("/img/dataset/caret_down.png") no-repeat scroll 5px center transparent;}
+div.dataset ul.tree li.openclose.close > ul.line > li.count1{background-image: url("/img/dataset/caret_right.png")}
+div.dataset ul.tree li.level1 li.count0 {margin-right:40px}
+div.dataset ul.tree li.level2 li.count0 {margin-right:60px}
+div.dataset ul.tree li.level3 li.count0 {margin-right:80px}
+div.dataset ul.tree li.level4 li.count0 {margin-right:100px}
+div.dataset ul.tree li.level5 li.count0 {margin-right:120px}
+
+/*div.dataset ul.list li.dataset {float:left;text-align:center;vertical-align: bottom;border:0px solid #999;margin:0 10px 10px 0;min-height:128px;width:128px}   width if image are not cropped */
+div.dataset ul.list {margin-left:-12px}
+/*div.dataset ul.list li.dataset {float:left;text-align:center;vertical-align: bottom;border:0px solid #999;margin:0 0 6px 12px;position:relative}*/
+div.dataset ul.list li.dataset {display:inline-block;text-align:center;vertical-align: top;border:0px solid #999;margin:0 0 6px 12px;position:relative}
+div.dataset ul.list li.dataset div.remove  {cursor:pointer;display:none;background: url(/img/dataset/list_remove.png) repeat scroll 0 0 #FF0000;height: 27px;width: 27px;position: absolute;}
+div.dataset ul.list li.dataset:hover div.remove  {display:block;}
+div.dataset ul.list li.dataset.removed div.remove  {display:block;}
+div.dataset ul.list li.dataset div.dragsort  {cursor:move;display:none;background: url(/img/dataset/dragsort.png) repeat scroll 0 0 #FF0000;height: 27px;width: 27px;position: absolute;right:0}
+div.dataset ul.list li.dataset:hover div.dragsort  {display:block;}
+/* next: tmp because image were not good sizes! */
+div.dataset div.media_tattoo li.dataset ,div.dataset div.media_piercing li.dataset ,div.dataset div.media_studio li.dataset {max-width:156px}
+div.dataset.people_details div.media_tattoo li.dataset ,div.dataset.people_details div.media_piercing li.dataset ,div.dataset.people_details div.media_studio li.dataset {height:163px}	/* overriden with js in js_cbyDataset */
+
+div.dataset div.onefield {text-align:center;margin:10px 0}			/* a onefield (layout=div) dataset_block */
+
+div.popup {background-color:#fff;border:1px solid #999;box-shadow: 3px 3px 6px #000}		/* all popups (calendar, xselect,...) */
+div.dataset input.cbyCalendar {background: url("/img/dataset/input_calendar.jpg") no-repeat scroll right center #fff;cursor:pointer}
+div.dataset input.cbyTime {background: url("/img/dataset/input_time.png") no-repeat scroll right center #fff;cursor:pointer}
+div.dataset input.cbySelect {background: url("/img/dataset/input_select.png") no-repeat scroll right center #fff;padding-right:16px;cursor:pointer;width:134px}
+div.cbyCalendar, div.cbyTime, div.cbySelect {z-index:10;border-radius:4px;padding:5px;}
+div.cbyCalendar table, div.cbyTime table {width:100%;margin:0}
+div.cbyCalendar a, div.cbyTime a {cursor:pointer;color:#000}
+div.cbyCalendar a:hover, div.cbyTime a:hover{text-decoration:underline}
+div.cbyCalendar table,.cbyCalendar table td {border-bottom:1px solid #000;border-collapse:collapse;padding:3px;text-align:center;/*line-height:14px;font-size:13px*/}
+div.cbyTime table,.cbyTime table td {border-bottom:1px solid #000;border-collapse:collapse;padding:3px;text-align:center;/*line-height:14px;font-size:13px*/}
+div.cbyCalendar td.today {background-color:#ccc}
+div.cbyCalendar td.selected {background-color:#000}
+div.cbyCalendar td.selected a {color:#fff}
+div.cbyTime td.selected {background-color:#000}
+div.cbyTime td.selected a {color:#fff}
+div.cbyCalendar td.title {font-weight:bold}
+div.cbyTime td.title {text-align:left}
+div.cbyCalendar td.disabled {color:#999}
+div.cbySelect > ul {max-height:200px;overflow:auto}
+div.cbySelect div {border-bottom:1px solid #000;min-height:1.2em;text-align:left;padding:2px 2px 2px 14px;cursor:pointer;}
+div.cbySelect div:hover {background-color:#ccc !important}
+div.cbySelect div.checkbox {background: url("/img/dataset/checkbox_off.png") no-repeat scroll left center;}
+div.cbySelect div.checkbox.selected {background-image:url("/img/dataset/checkbox_on.png");}
+div.cbySelect div.category {background: url("/img/dataset/caret_right.png") no-repeat scroll left center;}
+div.cbySelect div.category.open {background-image: url("/img/dataset/caret_down.png");}
+div.cbySelect div.new {font-style:italic;color:#ddd}
+div.cbySelect li li div.checkbox {background-position: 14px center;padding-left:28px}
+
+div.dataset ul.xradio li {float: left;margin-right: 10px;border:1px solid #aaa;background-color:#eee;border-radius:5px;min-width:4em;cursor:pointer;padding:3px 10px;text-align:center;background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);user-select: none;-moz-user-select: none}
+div.dataset ul.xradio li input{width:auto !important}
+div.dataset ul.xradio li:hover {background-color:#fff;background-image: linear-gradient(to bottom, #E6E6E6, #FFFFFF);}
+div.dataset ul.xradio li.checked {font-weight:bold}
+div.dataset ul.xradio li.unchecked {color:#666}
+
+.dataTables_wrapper {clear: both;min-height: 302px;position: relative;}
+.dataTables_wrapper table {clear:both}
+.dataTables_length {		padding:20px 0 10px;float: left;width: 40%;}
+.dataTables_filter {		padding:20px 0 10px;float: right;text-align: right;}
+.dataTables_filter input {		color:#ff0000;}
+.dataTables_info {		padding:00px 0 20px;float: left;width: 40%;}
+.dataTables_paginate {	padding:00px 0 20px;float: right;text-align: right;}
+.sorting {background: url("/img/dataset/sort_both.png") no-repeat scroll right center transparent;cursor: pointer;}
+.sorting_asc {background: url("/img/dataset/sort_asc.png") no-repeat scroll right center transparent;cursor: pointer;}
+.sorting_desc {background: url("/img/dataset/sort_desc.png") no-repeat scroll right center transparent;cursor: pointer;}
+.paginate_button{cursor:pointer;border:1px solid #aaa;background-color:#eee;border-radius:5px;min-width:4em;padding:3px;margin-left:3px}
+.paginate_active{cursor:pointer;border:1px solid #aaa;background-color:#fff;border-radius:5px;min-width:4em;padding:3px;margin-left:3px}
+
+
+/*div.dataset.signup table.data th.dataset, div.dataset.login table.data th.dataset {width:30%}*/
+/* put buttons in the bottom right corner */
+div.dataset.signup div.block,div.dataset.signupfan div.block, div.dataset.login div.block, div.dataset.forgetpasswd div.block {padding-bottom:40px}
+div.dataset.signup div.buttons,div.dataset.signupfan div.buttons, div.dataset.login div.buttons, div.dataset.forgetpasswd div.buttons {top:auto;bottom:5px;left:33%;margin:5px}
+div.dataset.signupfan div.block {margin-bottom:40px}
+div.dataset.forgetpasswd  {display:none}
+div.dataset.forgetpasswd div.header {display:none}
+div.dataset.forgetpasswd div.info {margin-left:34%}
+
+div.dataset.profile div.main_fan div.info {display:none}
+div.dataset.profile div.media_fan div.info {display:none}
+
+div.dataset.onebooking div.onebookingouter {padding-bottom:50px}
+div.dataset.onebooking div.client div.buttons, div.dataset.onebooking div.artist div.buttons {top:auto;bottom:15px;right:50px;margin:5px}
+
+ul.autocomplete {padding: 2px;border-radius: 4px;background-color:#EEEEEE;border: 1px solid #DDDDDD;max-height: 200px;overflow-y: scroll;z-index:9999;}
+ul.autocomplete li{border:1px solid #EEEEEE;border-radius: 4px;}
+ul.autocomplete li.hover{border:1px solid #FFA5A5;background-color:#FFE0E0;}
+ul.autocomplete li a{cursor:pointer;display:block;text-decoration: none;border-radius: 4px;color: #333333;}
+
+div.filesdropboxcontainer form {margin:10px 10px}
+div.filesdropboxcontainer form input{min-width:100px;margin-right:10px}	/* reset default*/
+#filesdropbox {width:818px;min-height:560px;border:2px dotted #999;border-radius:10px}
+#filesdropbox .message {font-size:5em;color:#999;margin:50px 0;display:block;width:100%;text-align:center}
+#filesdropbox .preview{width:195px;height: 165px;float:left;margin: 25px 0 0 60px;position: relative;text-align: center;}
+#filesdropbox .preview img{max-width: 190px;max-height:130px;border:3px solid #fff;display: block;box-shadow:0 0 2px #000;}
+#filesdropbox .imageHolder{display: inline-block;position:relative;}
+#filesdropbox .uploaded{position: absolute;top:0;left:0;height:100%;width:100%;background: url('/img/dataset/filedropbox_done.png') no-repeat center center rgba(255,255,255,0.5);display: none;}
+#filesdropbox .preview.done .uploaded{display: block;}
+#filesdropbox .progressHolder{position: absolute;background-color:#ccc;height:12px;width:100%;left:0;bottom: 0;box-shadow:0 0 0px #000;}
+#filesdropbox .progress{background-color:#000;position: absolute;height:100%;left:0;width:0;box-shadow: 0 0 0px rgba(255, 255, 255, 0.4) inset;-moz-transition:0.25s;-webkit-transition:0.25s;-o-transition:0.25s;transition:0.25s;}
+#filesdropbox .preview.done .progress{width:100% !important;}
+#filesdropbox:after { clear: both; content: ""; display: block;}
+#singledropbox {padding:5px; text-align:center}
+
+
+div.dataset div.cbyControl {height:23px;background-color:#e8e6e3;font-size:11px;font-family:verdana}
+div.dataset div.cbyControl ul:first-child{position:relative;z-index:99;margin:0 auto;float:left;line-height:13px;width:100%}
+div.dataset div.cbyControl a {white-space:nowrap;display:block;cursor:pointer;color:#000;border:2px solid #d4d0c8;background-color:#d4d0c8;text-decoration:none;padding:1px 12px;margin:1px;background-repeat:no-repeat; background-position:left center}
+div.dataset div.cbyControl span {display:block;background-color:#e8e6e3;color:#000;padding:3px 3px;margin:1px;}
+div.dataset div.cbyControl a:hover, #cbyControl a.hover { border-color:#e8e6e3 #a59d8c #a59d8c #e8e6e3 }
+div.dataset div.cbyControl a:active, #cbyControl a.checked { border-color:#a59d8c #e8e6e3 #e8e6e3 #a59d8c }
+div.dataset div.cbyControl ul li { width:auto; }
+div.dataset div.cbyControl ul li ul li{ width:120px; }
+div.dataset div.cbyControl ul li { background-color:#d4d0c8;float: left; border-top:1px solid #bbb; border-right:1px solid #bbb;  }
+div.dataset div.cbyControl ul li.separator { border-top:1px solid #888; }
+div.dataset div.cbyControl ul ul { width:124px;}
+div.dataset div.cbyControl ul.multiple li { width:22px; }
+div.dataset div.cbyControl ul.multiple li a { padding:1px 0; text-align:center}
+div.dataset div.cbyControl ul li ul { display:none; position:absolute }
+div.dataset div.cbyControl ul li ul li ul{ position:absolute; margin-left:121px; margin-top:-22px }
+/*div.dataset div.cbyControl ul li ul li ul a{ padding-left:2px }*/
+div.dataset div.cbyControl ul li ul li ul.left{ margin-left:-121px; }
+div.dataset div.cbyControl a.disabled{ color:#888 }
+div.dataset div.cbyControl a.checkbox{ background-image: url(/img/dataset/checkbox_off.png); }
+div.dataset div.cbyControl a.checkboxon{ background-image: url(/img/dataset/checkbox_on.png); }
+
+div.dataset div.months {width:100%;overflow:hidden}
+div.dataset div.months table{margin:0}
+div.dataset div.month {font-size:0.9em;border:1px solid #e5e5e5;margin:3px;padding:3px;border-radius:3px}
+div.dataset table.month tr.monthname td{text-align:center;background:#f2f2f2;border-bottom:1px solid #e5e5e5}
+div.dataset table.month tr.dayname{color:#666}
+div.dataset table.month tr.day{color:#333}
+div.dataset table.month td{text-align:center}
+
+div.dataset .divinline div {display: inline-block;}		/* Allow to have DIV field next to each other */
+
+div.dataset.people_details div.main_fan div.info {display: none;}	

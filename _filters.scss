@@ -1,0 +1,76 @@
+/******************************************************************************/
+/* FILTERS */
+/******************************************************************************/
+.jplist-panel button,
+.jplist-ios-button,
+.jplist-drop-down,
+.jplist-panel .jplist-pagination button
+{
+    line-height: initial;
+    border: 2px solid #000;
+    text-shadow: none;
+    background: none;
+    color:#000;
+    background-color: #FFF;
+
+    &:hover {
+        background: none;
+        color:#FFF;
+        background-color: #000;       
+    }
+}
+
+.jplist-drop-down:hover .jplist-dd-panel {
+    color: #000;
+}
+
+.jplist-drop-down ul li,
+{
+    border:none;
+    text-shadow: none;
+    background: none;
+    color:#000;
+    background-color: #FFF; 
+
+    &:hover {
+        background: none;
+        color:#FFF;
+        background-color: #000;      
+    }
+}
+
+.jplist-label,
+.jplist-panel .jplist-pagination .jplist-current,
+
+{
+    border:none;
+    text-shadow: none;
+    background: none;
+    color:#FFF;
+    background-color: #000;   
+}
+
+.jplist-drop-down .jplist-dd-panel,
+{
+    line-height: initial;     
+}
+
+.text-filter-box {
+  line-height: initial;
+    border: 2px solid #000;
+    text-shadow: none;
+    background: none;
+    color:#000;
+    background-color: #FFF;
+
+    &:hover {
+        background: none;
+        color:#FFF;
+        background-color: #000;       
+    }  
+    
+}
+
+.jplist-panel input[type=text] {
+    width:auto;
+}

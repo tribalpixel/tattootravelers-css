@@ -1,0 +1,246 @@
+/******************************************************************************/
+/* FLEX ITEMS */
+/******************************************************************************/
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: strech;
+    align-items: strech;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    margin: 0;
+    padding: 0;
+}
+
+.flex-item {
+    -webkit-flex: 0 1 350px;
+    flex: 0 1 350px;
+    //align-self:stretch;
+
+    border: 1px solid #CCC;
+    border-radius: 0.25rem;
+
+    padding:0;
+    margin: 0.25em;
+
+    //text-align: center;
+    font-size: 0.850em;
+
+    &:hover {
+        box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+        h3 {
+            background-color: #000;
+            a{
+                color:#FFF;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.jplist-hidden {
+    display: none !important;
+}
+
+
+/* Iphone6/tablets */
+@media screen and (max-width: $breakpoint_tablet) {
+    .flex-item {
+        //-webkit-flex: 0 1 49%;
+        //flex: 0 1 49%;
+    }
+}
+/* small phone  */
+@media screen and (max-width: $breakpoint_mobile) {
+    .flex-item {
+        //-webkit-flex: 0 1 100%;
+        //flex: 0 1 100%;
+    }
+}
+
+/******************************************************************************/
+/* PROFILE VIEW */
+/******************************************************************************/
+.flex-profile-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    //align-items: stretch;
+
+    //width:100%;
+    //height: 100%;
+}
+
+.flex-profile {
+    //padding:0 10px;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;  
+    margin: 0;
+    position: relative;
+}
+
+.flex-picture {
+    height:15em;
+
+    -webkit-flex: 1 0 15em;;
+    flex: 1 0 15em;;
+    
+    overflow: hidden;
+    position: relative;
+
+    img {
+        width: 100%;
+        height:auto;
+        position: absolute;
+        top: -50%;
+    }
+}
+
+.flex-bar {
+    height:2em;
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;   
+    
+    
+    
+    border-top: 4px solid #000;
+    background: rgba(0,0,0,.15);    
+
+    &>div {
+        //@include flexi-list-row;
+    }
+}
+
+.profile-compact {
+    //border: 4px solid #000;
+    position: relative;
+
+}
+.profile {
+    //border: 4px solid #000;
+    position: relative;
+
+    h3 { 
+        height:3rem;
+        padding: 2*$padding;
+        //@include hyperlinks;
+        a {
+            display:block;
+        }
+    } 
+
+    div {
+        position: relative;
+    }
+   
+
+}
+
+.profile-styles,
+.profile-metas {
+    margin:2px 10px;
+}
+
+.profile-styles {
+    
+        height:4em;
+
+    ul {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;         
+    }
+
+    li { 
+        padding:1px 2px;
+        margin:3px 6px 0 0;
+        border: 1px dotted #CCC;
+        font-size: smaller;
+        //-webkit-flex: 0 0 auto;
+        //flex: 0 0 auto;
+        text-align: center;
+    }   
+}
+
+.profile-metas {
+   display: block;
+       float:right;
+    //border: 1px solid red;
+    &>div {
+        display:inline-block;
+        padding: $padding;
+    }
+
+}
+
+.profile-contact {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    right: 0;
+    left: 0;
+    
+    text-align: right;
+    padding: 2*$padding 2*$padding $padding 2*$padding;
+    
+    background: rgba(255,255,255,.5);
+}
+
+.profile-origin {
+    position: absolute;
+    top: 0;
+    //bottom: 0;
+    margin: 0;
+    padding: $padding;
+    //text-align: center;
+    right: 0;
+    left: 0; 
+    background: rgba(255,255,255,.5);
+}
+
+.profile-resident, 
+.profile-guest {
+    position: relative;
+    //right:0;
+    //left:0;
+    //box-shadow: 2px 2px 10px rgba(255,255,255,1);
+    float:left;
+    padding: $padding;
+}
+
+.profile-resident {
+//bottom: 2em;
+}
+.profile-guest {
+//bottom: 4em;
+    float: right;
+}
+
+.profile-btn {
+    -webkit-border-radius: 0.25em;
+    -moz-border-radius: 0.25em;
+    border-radius: 0.25em;
+    color: #FFF;
+    font-size: 0.875em;
+    background: #000;
+
+    padding: 5px 10px 10px 10px;
+    margin-bottom: 5px;
+    //border: solid #000 4px;
+    text-decoration: none;
+
+    &:hover {
+        background: #FFF;
+        color: #000;
+        text-decoration: none;
+    }   
+}

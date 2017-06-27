@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+/*---------- first part: Generic tags --------------*/
+
+* { margin:0px; padding:0px; outline:0 none;}
+
+/* useful if content is centered (avoid lateral jump when scrollbar appears) */
+html { overflow-y: scroll; }	
+
+//body  { font-family: Dosis, 'Archivo Narrow', sans-serif; font-size:15px; font-weight:200 }
+//body  { font-family: 'Open Sans', sans-serif; font-size:13px; font-weight:200 }
+
+//body.zhcn {font-family: "KaiTi", Dosis, 'Archivo Narrow', "楷体", STKaiti, "华文楷体", sans-serif;}
+//body {-webkit-text-size-adjust:none;}  /* to avoid iPhone to resize font-size */
+
+/* Firefox trick: avoid extra vertical space between li with image */
+li img { vertical-align:middle}
+
+img {border:0; vertical-align:top;}
+
+a { outline:0 none; color: #333; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a.nodeco:hover { text-decoration: none; }
+a.hover { opacity:0.5 }
+a.hover:hover { opacity:1 }
+table, td, th { border-collapse:collapse; border:0; border-spacing: 0px;}
+td, th {vertical-align:top;}
+
+blockquote {margin-left:20px;}
+
+ul, li { list-style: none;  }
+
+//hr {height:1px; border:0; color:#666; background-color:#666;margin:5px 0;}
+
+input, select {border:1px solid #eee;border-radius:3px}
+input:focus {box-shadow:0px 0px 3px #666}
+input.cbySelect:focus {box-shadow:0px 0px 0px}
+
+.left {text-align:left;}
+.right {text-align:right;}
+
+.fLeft {float:left;}
+.fRight {float:right;}
+.clearBoth {clear:both;}
+.ellipsis {white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.red {color:#e42f2c !important;}
+.invisible, .hidden {display:none !important}
+.light {color:#999999}
+.field_rate {letter-spacing:1px}
+
+span.highlight {background-color: yellow;}		/* for the jquery.highlight plugin */
+
+div.faq h2{margin-bottom:30px}
+div.faq p{line-height:2em}
+div.faq p.openclosetitle{font-size:1.2em}
+div.faq p.openclosecontent{padding:0 20px}
+
+div.legal h2{margin-bottom:30px}
+div.legal p{}
+div.legal p.openclosetitle{font-size:1.2em}
+div.legal p.openclosecontent{display:none;font-family:courier;font-size:0.8em;white-space:pre-wrap}
+div.legal table{margin:0 20px;border:0}
+div.legal table td{width:33%;padding:10px;border:1px solid #ccc;vertical-align:middle}
+
+/*---------- second part: CBY menus --------------*/
+
+a.selected {font-weight:400;}
+
+div.slideview {width:660px;height:478px;position:relative;overflow:hidden}
+div.slideview li.slide {position: absolute; top: 0; left:0; transition: left 1s ease 0s; width: 100%; z-index:1}
+div.slideview li.current {left: 0;opacity: 1;z-index:2}
+div.slideview li.next {left: 100%;}
+div.slideview li.prev {left: -100%;}
+div.slideview li.nodelay {transition-duration: 0s}
+div.slideview ul.ticks {position:absolute;bottom:0px;width:100%;text-align:center}
+div.slideview li.tick {display:inline-block;width:0;height:0;border:5px solid #bbb;border-radius:5px;margin:5px;cursor:pointer}
+div.slideview li.tick.selected {border:5px solid #666;}
+
+
+#cbyPop1 {
+    display:none;
+    background-color:#fff;
+    padding:10px;
+    margin:10px;
+    position:absolute;
+    //width:660px;
+    //min-height:100%;
+    //left:304px;
+    top:0;
+    right:0;
+    left:0;
+    z-index:3;
+    box-shadow: 0px 0px 12px #333;
+}
+#cbyPop1:after {		/* to be sure to have a margin (space at the bottom)*/
+    bottom: -20px;
+    content: "";
+    height: 20px;
+    position: absolute;
+    width: 1px;
+}
+#cbyPop1 div.close {
+    position: absolute;
+    right: 12px;
+    z-index: 1000;
+}
+#cbyPop1 div.close img {border:0px solid #ddd}
+#cbyPop1 div.logo {
+    position: absolute;
+    //right: 12px;
+    //top:-38px;
+    right: 67px;
+    top:21px;
+    z-index: 100;
+}
+//#cbyPop1 div.resume li {float:left;margin-right:10px;max-width: 450px;line-height:1.2em}
+#cbyPop1 div.resume li {float:left;margin-right:10px;max-width: 280px;line-height:1.2em}
+#cbyPop1 div.resume li li{float:none}
+#cbyPop1 div.resume li ul{margin-left:20px}
+#cbyPop1 div.resume h4{margin-bottom:3px}
+#cbyPop1 div.resume h4.space {margin-bottom:8px}
+
+
+div.padding {padding:10px 0}
+div.fancybox-title td img {margin-left:5px}
+
+table.padding td, table.padding th {padding:5px;}
+
+#search_members_count {width:90%}
+div.filters {background-color:#f9f9f9;border:0px solid #ddd;padding:0;margin:10px 0;border-radius:4px}
+div.filters table {margin:0}
+div.filters th, div.filters td{padding:0px;border:6px solid #f9f9f9;padding-left:2em}
+div.filters th {text-align:right;line-height:18px;}
+div.filters input[type=checkbox]{margin-left:-2em;vertical-align: bottom;}
+#search_members_list {}
+div.contentLeft ul li.line{margin:2px 19px 9px 2px;box-shadow: 4px 0 4px #999999;}
+li.line {position:relative}
+li.line img.people-like {position:absolute;right:5px;bottom:5px;opacity:0.1;cursor:pointer}
+li.line.people-like img.people-like {opacity:1 !important}
+li.line:hover img.people-like {opacity:0.5}
+//#search_members_list li.line, #thread_list li.line, #partners_list li.line, #thread_list li.line {margin:2px 19px 9px 2px;box-shadow: 4px 0 4px #999999;}
+//#search_members_list li.line.highlight{box-shadow: 4px 0px 4px #666;background-color:#F9F9F9} 
+li.line.highlight{ box-shadow: 4px 0px 4px #666;background-color:#F9F9F9; }
+#search_members_list li.line.info {padding:14px;text-align:center}
+
+//div.shadow {border:1px solid #ccc;border-radius:5px;box-shadow: 3px 3px 6px #aaa}
+h1, h2, h3, h4, h5, h6, div.filters th  {	font-weight:400}
+//h1 {margin:12px 0 5px; font-size:21px;}
+//h2 {margin:12px 0 5px; font-size:21px;}
+p {margin:5px 0;line-height:1.4em}
+
+div.loading {width:100%;min-height:400px;background-image: url("/img/dataset/ajax-loader-4.gif");background-position:50% 50%;background-repeat: no-repeat;}
+div.loading-compact {width:100%;min-height:40px;background-image: url("/img/dataset/ajax-loader-4.gif");background-position:50% 50%;background-repeat: no-repeat;}
+.loadingR {background: url("/img/dataset/ajax-loader-4.gif") no-repeat scroll right center transparent;}
+
+ul.people1 li{float:left;margin-right:10px;max-width:185px;overflow:hidden;white-space:nowrap}
+ul.people1 li.large-display{max-width:240px;}
+ul.people1 li h2{margin-top:5px}
+//div#list_artist img.highlight{transform: scale(1.1,1.1);box-shadow: 0px 0px 8px #000;}
+
+//.fancybox-lock .fancybox-overlay { overflow-x: auto; overflow-y: hidden; }
+
+/* new dataset styles by CG */
+#cbyPop1 .resume div.header {display:none;}
+#cbyPop1 .resume {border-bottom:2px solid #000;}
+#cbyPop1 .resume .field_image img {height:192px;}
+
+div.cbyDataset div.header {
+    padding: 9px 0;
+    background-image:none;
+}
+#cbyPop1 .media li.dataset {
+    //background-color: #000;
+    //border:8px solid #000;
+    width:128px;
+    height:128px;
+    margin: 0 12px 12px 0;
+}
+div.cbyDataset span.title {
+    line-height:22px;	/* line-height: to match buttons */
+    font-size:21px;
+    text-transform:uppercase;
+    font-weight:200;
+}
+//a.forgetpasswd {position:relative;top:-38px;left:330px}
+#cbyPop1  div.block.resume {margin-bottom:0px;position:relative}
+#cbyPop1  div.field_type1, #cbyPop1  div.field_address_country {display:inline;}
+#cbyPop1 h2 {margin:0;font-size:21px; line-height: 23px}
+#cbyPop1  h2 + h4 {margin-top:5px;}
+#cbyPop1  h3, #cbyPop1  h4 {margin-bottom:5px;}
+#cbyPop1  div.resume {z-index:10; }
+//#cbyPop1 div.people_details ul.list div.field_style {display:none}
+ul.list div.field_style {overflow: hidden;text-overflow: ellipsis;width: 156px;white-space: nowrap;}
+ul.list div.field_displayname {overflow: hidden;text-overflow: ellipsis;width: 72px;white-space: nowrap;}
+ul.list div.field_types {overflow: hidden;text-overflow: ellipsis;width: 72px;white-space: nowrap;}
+/* end of new styles by CG */
+
+div.field_image img {display:block} /* for chrome to avoid space after image */
+
+div.dataset div.info {line-height:1.2em}
+div.dataset div.info {font-style:normal}
+div.dataset div.info div.instructions {margin:10px 23px;}
+div.dataset div.info div.instructions li{margin-top:5px}
+div.dataset div.info div.instructions a{margin-top:10px}
+
+div.mywall select {width:100px}
+div.noentries {padding:10px 20px}
+
+div.fade {
+    background-image: -moz-linear-gradient(center bottom , #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+    bottom: -50px;height: 100px;left: 0;pointer-events: none;position: absolute;width: 100%;
+}
+table.wall-messages {width:100%;}
+table.wall-messages td {border-bottom:1px solid #999;height:25px;vertical-align:middle}
+table.wall-messages td.datetime {width:120px}
+table.wall-messages td.button {text-align:right;white-space:nowrap}
+
+.people_verified {padding-left:20px;line-height:21px;background: url("/img/people_verified.png") no-repeat scroll left center #fff;}
+//.people_not_verified {padding-left:20px;line-height:21px;background: url("/img/people_not_verified.png") no-repeat scroll left center #fff;}
+.people_not_verified {color:#c00;}
+ul.people1 h4.type  {margin-bottom:5px}
+ul.people1 h4.linkdex, ul.people2 h4.linkdex {padding-left:30px;line-height:27px;background: url("/img/people_push.jpg") no-repeat scroll left center transparent;}
+//ul.people1 h4.ttactivity, ul.people2 h4.ttactivity  {position:absolute;bottom:0;left:142px}
+ul.people1 h4.contact, ul.people2 h4.contact  {position:absolute;bottom:0;right:0}
+ul.people2 h4.contact img {cursor:pointer}		/* tabs on profile -> mail or profile */
+
+div.fancybox-title div.field_style {display:inline-block;/* width:80% */}
+div.fancybox-title div.field_like {display:inline-block;float:right}
+div.fancybox-skin { float:left; }
+
+//a.likeunlikethis {display:none;border: 1px solid #999999;box-shadow: 1px 1px 3px #000000;padding: 0 3px;min-width: 40px;text-align:center}
+//div.fancybox-title a.likeunlikethis {display:inline-block;}
+
+.btn { width: 75%; border:none !important; padding: 5px; float:right; }
+.btn:hover { box-shadow: 1px 1px 3px #000000; }  
+
+/* fancybox tricks to avoid scroll & shift */
+.fancybox-lock .fancybox-overlay {overflow: auto;}
+.fancybox-lock {overflow: visible;}  
+body {margin-right: 0 !important;}
+
+td.styles.artist_tattoo ul {width:200px;overflow-x:hidden}
+
+div.info_messages {margin-top:10px;}			/* the info block of message */
+div.mymessages div.msgtime {text-align:right;font-size:0.9em;color:#888}
+div.mymessages div.unread {/*font-weight:bold*/}
+div.mymessages div.msgtext {margin-bottom:10px}
+div.mymessages hr {margin:10px 0}
+div.mymessages textarea {margin:5px 0}
+
+.box_left { position: relative; background: #D3D3D3; border: 1px solid #555; padding:12px 20px; border-radius:5px;width:160px;margin-left:10px;margin-bottom:10px;} 
+.arrow_box_left { position: relative; background: #D3D3D3; border: 1px solid #555; padding:0px 20px; border-radius:5px;width:400px;margin-bottom:10px;margin-left:10px; display: inline-block; float: left;} 
+.arrow_box_left:after, .arrow_box_left:before { right: 100%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; } 
+.arrow_box_left:after { border-color: rgba(249, 249, 249, 0); border-right-color: #D3D3D3; border-width: 10px; top: 50%; margin-top: -10px; } 
+.arrow_box_left:before { border-color: rgba(85, 85, 85, 0); border-right-color: #555; border-width: 11px; top: 50%; margin-top: -11px; }
+
+.box_right { display:inline-block; float:right; background: #eee; border: 1px solid #555; padding:10px 20px; border-radius:5px;min-width:160px;margin-right:6px} 
+.arrow_box_right { position: relative; background: #eee; border: 1px solid #555; padding:0px 20px; border-radius:5px;margin-bottom:10px;margin-left:210px; margin-right:10px; display: inline-block; float: right;} 
+.arrow_box_right:after, .arrow_box_right:before { left: 100%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; } 
+.arrow_box_right:after { border-color: rgba(249, 249, 249, 0); border-left-color: #eee; border-width: 10px; top: 50%; margin-top: -10px; } 
+.arrow_box_right:before { border-color: rgba(85, 85, 85, 0); border-left-color: #555; border-width: 11px; top: 50%; margin-top: -11px; }
+
+div.msgtext  {overflow:hidden; width:100%;}
+.arrow_box_left img, .arrow_box_right img {float:left;margin-right:10px}
+
+table.booking-availability td {border-bottom:1px solid #ccc; /* padding:3px; */ }
+
+table.booking-availability tr.title td {border-bottom:1px solid #999;padding:3px 0}
+//table.booking-availability tr.info td > div{min-height:3em}
+table.booking-availability tr td:nth-child(3){ vertical-align:middle; text-align:center;}
+table.booking-availability tr.empty td {border-bottom:1px solid #fff;padding:3px}
+table.booking-availability div.field_date {display:inline;letter-spacing:1px}
+div.icon i { padding-right:4px; font-size: 1.25em;}
+i.verified { color: #000; }
+i.pending { color:#CCC; }
+
+div.onebookingouter {border:1px solid #999;margin:0 10px;background:#eee;border-radius:4px} /* the div outer the table */
+div.dataset table.onebooking.client td.dataset input {width:140px}
+div.dataset table.onebooking.artist td.dataset input {width:70px}
+div.dataset table.onebooking th.dataset {border:0;}
+div.dataset table.onebooking td.dataset {border:0;}
+
+a.translate {float: right;padding: 4px;}
+
+//div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 10px}
+div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 0;width:100%}
+
+a.bookingconfirmed {background: url("/img/next_b.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);color: #000000;display: block;font-size: 16px;margin-top: 10px;padding: 0 40px 0 0;text-align: right;width: 145px;}
+
+div.mywall div.countdown {display:inline-block}
+
+div.onebooking div.countdown {margin:10px;text-align:center}
+div.onebooking div.countdown span {font-family:courier;padding-left:0.5em}
+
+pre.email { border: 1px solid rgb(170, 170, 170); padding: 5px; white-space: pre-wrap; margin: 1em 0; border-radius: 5px; background-color:#fff}
+
+ul.signup-choose { margin-top:1em }
+li.signup-choose { box-shadow: 4px 0 4px #999999; margin: 2px 0px 9px 2px; position:relative}
+li.signup-choose img{ width:120px;vertical-align:top}
+div.signup-choose {padding: 0.5em 1em;display: inline-block;}
+
+.fblogin-div { 
+    //margin-left: 223px;
+    margin:$block_margin; 
+    
+    & > div {
+        padding: $padding;
+    }
+}
+.fblogin-button { 
+    background: url(/img/signup/facebook_signin.png) no-repeat 0 0; 
+    width: 150px; 
+    height: 22px;
+    display: inline-block; 
+    text-indent: -1000px; 
+    
+}
+.fblogin-button:hover {	background: url(/img/signup/facebook_signin.png) no-repeat 0 -24px;}
+.fblogin-button:active { background: url(/img/signup/facebook_signin.png) no-repeat 0 -48px;}
+//.fblogin-button + img { margin: 1em;}
+
+.ajax-results { padding:10px; margin:5px 0; background-color:#FFF; border: 1px solid #ccc; border-radius: 4px;}
+.ajax-results p { border-bottom:1px solid #eee; }
+.ajax-results h3 { font-size: 18px; text-transform: uppercase; font-weight: 200; margin-top:10px; }
+
+.small-lines { line-height: 1.35em; }
+//tr.info ul.people1 li { max-width: 280px; } 
+tr.info ul.people1 li {overflow:hidden; } 
+
+.form-line { padding:5px 0; text-align: right; margin-right: 50px;}
+.form-line > label { padding: 2px; margin:0 10px 0 0; display: inline-block; }
+.form-line > input {  min-width: 250px;  }
+.form-line > .error { font-weight:bold; color:red; }
+.form-line > .error:after { content:' *' }
+.form-alert-line { padding:4px; }
+.form-alert-line i { padding:0 4px 0 0; }
+
+.button i { padding: 4px 4px 0 0; font-size: 14px;}
+
+div.logos {bottom: 2px;position: absolute;}
+div.logos img {height:30px;vertical-align:bottom}
+div.logos h4 {display:inline-block}
+
+.field_availability div.cbySelect {width:300px;}
+.field_availability ul li {white-space: nowrap;}
+
+div.invoice input[type=radio] { margin-right:3px; margin-left:10px; }

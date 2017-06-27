@@ -1,0 +1,102 @@
+@mixin hyperlinks() {
+    a {
+        padding: $link_padding;
+        //background-color: #FFF;
+        color:#000;
+        text-decoration: none;
+        display: block;
+
+        &:hover, 
+            &.selected {
+            background-color: #000;
+            color:#FFF;            
+        }
+    } 
+}
+
+@mixin flexi-list-row() {
+
+    display: inline-block;
+}
+
+@mixin flexi-list-column($cols:1) {
+    ul { 
+        overflow: hidden;
+
+        padding: $padding;
+        column-count: $cols; 
+        vertical-align: top; 
+
+        li { padding: $link_padding; }
+    }
+}
+
+//http://zomigi.com/blog/deal-breaker-problems-with-css3-multi-columns/
+@mixin flexi-list-column-links($cols:1) {
+    ul { 
+        margin: 0;
+        column-count: $cols;
+
+
+        li { 
+            //padding: $link_padding; 
+            break-inside: avoid-column;
+        }
+
+        a { 
+            //padding:3px;
+            //margin:0;
+        }
+    }
+}
+
+@mixin flexi-list-nav($justify:space-around) {
+
+    ul {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: stretch;
+        align-items: stretch;
+        -webkit-justify-content: $justify;
+        justify-content: $justify;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+
+        li {
+            text-align: center;
+            //padding: 2*$link_padding 0;
+        }
+    }    
+}
+
+@mixin flexi-list-nav-mobile() {
+    ul {
+        -webkit-flex-flow: column wrap !important;
+        flex-flow: column wrap !important;        
+    }
+    li {  
+        //padding: $link_padding 0 !important; 
+        width:100%;
+    }
+}
+
+@mixin styles-list() {
+
+    li { 
+        padding:1px 2px;
+        margin:3px 6px 0 0;
+        border: 1px dotted #CCC;
+        
+        font-size: smaller;
+        display:inline-block;
+    }      
+}
+
+@mixin funky-title($color) {
+    h1,h2,h3,h4,h5,h6 {
+        color: $color;
+        a {
+            color: $color;   
+        }
+    }
+}

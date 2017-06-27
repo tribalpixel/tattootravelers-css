@@ -1,0 +1,350 @@
+/******************************************************************************/
+/* 04/2017 | Author: Tribalpixel 
+/******************************************************************************/
+/******************************************************************************/
+@charset "utf-8";
+
+$padding: 4px;
+$link_padding: 6px;
+$block_margin: 1em 0.5em;
+$color: #C00;
+
+$breakpoint_tablet: 768px;
+$breakpoint_mobile: 425px;
+$breakpoint_mobile_small: 375px;
+
+@import "_mixins"; 
+@import "_beta";
+@import "_normalize";
+/******************************************************************************/
+/**  OLD CSS
+/******************************************************************************/
+@import "_dataset.scss";
+@import "_oldstyles.scss";
+
+/******************************************************************************/
+/** BASE LAYOUT 
+/******************************************************************************/
+
+*,html { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding:0;
+    margin: 0 auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+//@include funky-title($color);
+
+a {
+    outline: 0 none;
+    color: #000; 
+    &:hover { 
+        text-decoration: none;
+    }  
+}
+
+ul, 
+li { 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td,
+th {
+    padding: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin:5px 0;
+    padding: 0;
+}
+
+.hidden { display: none !important; }
+
+@media screen and (max-width: $breakpoint_tablet) {
+    body {
+        font-size: smaller;
+    }
+}
+
+/******************************************************************************/
+/** NAVIGATION / HEADER
+/******************************************************************************/
+
+#cbyHeader {
+
+    text-align: left;
+
+    &>div {
+
+        display: inline-block;
+        vertical-align: top;
+        //max-height: 215px;
+        margin: 0.5em;
+        //border: 1px solid red;
+
+    }
+}
+
+#cbyMenu {
+
+    //-webkit-flex: 3 0 auto !important;
+    //flex: 3 0 auto!important;
+
+    //border: 1px solid red;
+    //overflow: hidden;
+
+    &>div {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    ul {
+        //border: 1px solid blue;
+        //float:left;
+        //height:100%;
+
+
+        li {
+            padding: $padding/2 0;
+        }
+    }
+
+    hr { display:none; }
+
+    @include hyperlinks();
+
+}
+#cbySubMenu {
+
+    //text-align: left;
+    //float:right;
+
+    &>div {
+        display:inline-block;
+        vertical-align: middle;
+    }
+
+    &>div:first-child {
+        //margin-right: 10px;
+    }
+}
+
+
+#cbySocial {
+
+    a,
+    a.hover {
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }  
+
+}
+
+#cbyLangMenu {
+
+    &>div {
+        display:inline-block;
+    } 
+
+    .field_languages > div {
+        text-align: left;
+        //border: 1px solid red;
+    }
+
+    input {
+        border: none;
+        padding: 3px 0;
+        background-color: transparent;
+
+        &:hover {
+            cursor: pointer;   
+        }
+    }
+
+}
+
+@media screen and (min-width: $breakpoint_tablet) {   
+    #cbySubMenu > div {
+        display: block;
+        vertical-align: middle;
+        padding: $padding;
+    }
+}
+
+/* Iphone6/tablets */
+@media screen and (max-width: $breakpoint_tablet) {
+
+    #logo {
+        display:none !important;
+    }
+
+    #cbySubMenu {
+        position: absolute;
+        right:3px; 
+        top: 56px;
+        font-size:1em;
+
+        input {
+            padding: 5px 0 !important;
+            width: 60px!important;
+        }        
+
+        &>div {
+            margin:0;
+        }
+    }
+}
+
+/* small phone  */
+@media screen and (max-width: $breakpoint_mobile_small) {
+
+    #cbySubMenu {
+        position: absolute;
+        right:3px;       
+        top: 44px;
+
+        font-size:0.825em;
+
+        input {
+            width: 44px!important;
+            font-size:0.875em;
+        }        
+
+        &>div {
+            margin:0;
+        }
+
+        &>div:first-child {
+            margin: 0px;
+        }
+    }
+    #cbySocial {
+        img { height:20px; }
+    }
+
+}
+
+@import "_slicknav";
+
+/******************************************************************************/
+/**  MAIN CONTENT
+/******************************************************************************/
+#cbyContent  {
+
+    text-align: left;
+    margin: $block_margin;
+    //border: 1px solid red;
+
+    //overflow: scroll;
+}
+.contentLeft {
+    float:left;
+    width: 29%;
+    margin-right: 1em;
+
+    div.deco  {
+        height: 25em;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width:100%;
+            height: auto;
+            vertical-align: middle;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+.contentRight {
+    float:left;
+    width:69%;
+}
+
+.dataset {
+    text-align: initial;    
+}
+
+@import "_modules.scss";
+//@import "_profiles.scss";
+@import "_slideshow.scss";
+
+// SEMANTIC UI
+@import "_button.scss";
+@import "_flag.scss";
+@import "_label.scss";
+@import "_card.scss";
+//@import "_feed.scss";
+//@import "_table.scss";
+
+
+@media screen and (max-width: $breakpoint_tablet) {
+
+    #cbyContent {
+        overflow-x: auto;
+    }
+
+    .contentLeft {
+        //display:none !important;
+    }
+    .contentLeft,
+    .contentRight {
+        //border: 1px solid red;
+        flex:none;
+        float:none;
+        display: block;
+        width:100%;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    div.cbyDataset span.title {
+        font-size: 18px;
+        line-height: 17px;
+    }
+}
+
+
+/******************************************************************************/
+/** NAVIGATION / FOOTER
+/******************************************************************************/
+
+#cbyFooter {
+
+    border-top: 2px solid #000;
+    margin: $block_margin;
+    padding: 2*$padding;
+
+    @include flexi-list-nav();
+    @include hyperlinks();
+}
+
+@media screen and (max-width: $breakpoint_tablet) {
+    #cbyFooter {
+        @include flexi-list-nav-mobile();
+    }
+}
+
+/******************************************************************************/
+/** POPUP FIXES
+/******************************************************************************/
+@media screen and (max-width: $breakpoint_tablet) {
+    #cbyPop1 div.logo { 
+        display:none;
+    }
+}

@@ -1,0 +1,60 @@
+/******************************************************************************/
+/* GENERAL MODULES */
+/******************************************************************************/
+.module-container {
+    //border: 1px solid red; 
+    width:100%;
+    
+    h2 {
+        //padding: $padding;
+        margin: 20px 0;
+    }
+}
+.module-header {
+    //border: 1px solid green;
+    span { 
+        font-size: 13px;
+        font-style: italic; 
+        color:#CCC;
+    }
+}
+.module-nav {
+    @include flexi-list-nav(flex-start);
+    ul li { margin: 0 0.25em; }
+    ul li:first-child { margin: 0 0.25em 0 0; }
+    @include hyperlinks();
+}
+.module-content{
+    //border: 1px solid blue;
+    margin: 10px 0;
+}
+
+.module-no-results {
+    background-color: #CCC;
+    margin: 10px auto;
+    padding: 0.5em;
+
+    p {
+        margin:0;
+        line-height: normal;
+        text-align: center;
+        font-size: 1.25em;
+        color: #FFF;
+    }
+}
+
+.countries-list {     
+    @include flexi-list-column-links(4);    
+    @include hyperlinks();
+}
+
+@media screen and (max-width: $breakpoint_tablet) {
+    .module-nav {
+        //font-size:smaller;
+        //@include flexi-list-column();
+    }    
+    .countries-list {
+        @include flexi-list-column-links(2);
+    }
+
+}

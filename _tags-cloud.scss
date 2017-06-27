@@ -1,0 +1,38 @@
+.tags-cloud {
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: center;
+    justify-content: center;  
+
+    margin: 1em auto;
+    border: 1px solid red;
+    width:100%;
+
+    span {
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto; 
+
+        padding:0.5em;
+
+        font-size:2em;
+
+        //white-space: nowrap;
+
+    }
+
+    a {
+        border: 2px solid black;
+        padding:0.25em;
+
+        &:hover{
+            color:#FFF;
+            background-color: #000;
+            text-decoration: none;
+        }
+
+
+    }
+} 

@@ -1,0 +1,37 @@
+/******************************************************************************/
+/* BETA LABEL  / DEV */
+/******************************************************************************/
+body:after{
+    content: "beta";
+    position: fixed;
+    width: 140px;
+    height: 40px; 
+    background: rgba(0,0,0,.8);
+    top: 8px;
+    left: -40px;
+    text-align: center;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    -ms-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+@media screen and (max-width: $breakpoint_tablet) {
+/*
+    body:after{    
+        width: 75px;
+        height: 20px;
+        top: 8px;
+        left: -19px;
+        font-size: 10px;
+        line-height: 20px; 
+        -ms-transform:rotate(-45deg);
+        -webkit-transform:rotate(-45deg);
+        transform:rotate(-45deg);
+    }
+    */
+}
