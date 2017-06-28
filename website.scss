@@ -23,6 +23,34 @@ $breakpoint_mobile_small: 375px;
 @import "_oldstyles.scss";
 
 /******************************************************************************/
+/**  FONTS
+/******************************************************************************/
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/OpenSans-Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+/******************************************************************************/
 /** BASE LAYOUT 
 /******************************************************************************/
 
@@ -33,7 +61,8 @@ body {
     padding:0;
     margin: 0 auto;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'open_sanslight', Arial, sans-serif;
+
 }
 
 //@include funky-title($color);
@@ -289,6 +318,7 @@ hr {
 @import "_flag.scss";
 @import "_label.scss";
 @import "_card.scss";
+@import "_images.scss";
 //@import "_feed.scss";
 //@import "_table.scss";
 
@@ -343,8 +373,54 @@ hr {
 /******************************************************************************/
 /** POPUP FIXES
 /******************************************************************************/
-@media screen and (max-width: $breakpoint_tablet) {
+/*
+#cbyPopOverlay {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: #000;
+    opacity: .75;
+    z-index: 299;
+
+}
+*/
+@media screen and (max-width: $breakpoint_mobile) {
+    
+ 
     #cbyPop1 div.logo { 
-        display:none;
+        //display:none;
+        top:25px;
+        right:70px;
+        img {
+            height:120px!important; 
+        }
     }
+    #cbyPop1 .people2  {
+
+        img {
+            height:140px!important; 
+        }
+    }
+    #cbyPop1 div.resume {
+        li {
+            float: none;
+            
+        }
+        
+        h4, h4.space {  
+            margin:0; }
+    }
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+    #cbyPop1 {
+        max-width:700px;
+        margin:auto;
+    }
+
+    /*    #cbyPop1 div.logo { 
+            display:none;
+        }*/
 }
