@@ -312,13 +312,16 @@ hr {
 @import "_modules.scss";
 //@import "_profiles.scss";
 @import "_slideshow.scss";
-
+ 
 // SEMANTIC UI
-@import "_button.scss";
-@import "_flag.scss";
-@import "_label.scss";
-@import "_card.scss";
-@import "_images.scss";
+@import "_ui-button.scss";
+@import "_ui-flag.scss";
+@import "_ui-label.scss";
+@import "_ui-card.scss";
+@import "_ui-images.scss";
+@import "_ui-transition.scss"; 
+@import "_ui-popup.scss";
+@import "_ui-item.scss";
 //@import "_feed.scss";
 //@import "_table.scss";
 
