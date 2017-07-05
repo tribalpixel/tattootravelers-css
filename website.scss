@@ -335,8 +335,8 @@ hr {
 @import "_ui-transition.scss"; 
 @import "_ui-popup.scss";
 @import "_ui-item.scss";
-//@import "_feed.scss";
-//@import "_table.scss";
+@import "_feed.scss";
+@import "_table.scss";
 
 
 @media screen and (max-width: $breakpoint_tablet) {
