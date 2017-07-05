@@ -25,31 +25,31 @@ $breakpoint_mobile_small: 375px;
 /******************************************************************************/
 /**  FONTS
 /******************************************************************************/
+/**/
 @font-face {
     font-family: 'open_sanslight';
-    src: url('../fonts/OpenSans-Light-webfont.eot');
-    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
-         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
-         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    src: url('../fonts/OpenSans-Light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-/*
+
 @font-face {
     font-family: 'open_sansregular';
     src: url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'open_sansbold';
     src: url('../fonts/OpenSans-Bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+
 /******************************************************************************/
 /** BASE LAYOUT 
 /******************************************************************************/
@@ -61,8 +61,13 @@ body {
     padding:0;
     margin: 0 auto;
     text-align: center;
-    font-family: 'open_sanslight', Arial, sans-serif;
+    //font-family: 'Open Sans', sans-serif;
+    font-family: 'open_sanslight', sans-serif;
 
+}
+
+strong {
+ //font-family: 'open_sansbold', Arial, sans-serif;   
 }
 
 //@include funky-title($color);
@@ -309,11 +314,19 @@ hr {
     text-align: initial;    
 }
 
+#go-top-btn {
+    position: fixed;
+    bottom:10px;
+    right:10px;
+}
+
 @import "_modules.scss";
 //@import "_profiles.scss";
 @import "_slideshow.scss";
  
 // SEMANTIC UI
+@import "_ui-grid.scss";
+@import "_ui-dimmer.min.scss";
 @import "_ui-button.scss";
 @import "_ui-flag.scss";
 @import "_ui-label.scss";
@@ -329,7 +342,7 @@ hr {
 @media screen and (max-width: $breakpoint_tablet) {
 
     #cbyContent {
-        overflow-x: auto;
+       // overflow-x: auto;
     }
 
     .contentLeft {
