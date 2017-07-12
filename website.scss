@@ -48,7 +48,7 @@ $breakpoint_mobile_small: 375px;
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
 
 /******************************************************************************/
 /** BASE LAYOUT 
@@ -315,13 +315,14 @@ hr {
 }
 
 #go-top-btn {
-    position: fixed;
+    position: fixed; 
     bottom:10px;
     right:10px;
 }
 
 @import "_modules.scss";
 //@import "_profiles.scss";
+@import "_pagerfanta.scss";
 @import "_slideshow.scss";
  
 // SEMANTIC UI
@@ -335,9 +336,12 @@ hr {
 @import "_ui-transition.scss"; 
 @import "_ui-popup.scss";
 @import "_ui-item.scss";
-@import "_feed.scss";
-@import "_table.scss";
-
+@import "_ui-input.scss";
+@import "_ui-statistic.scss";
+@import "_ui-segment.scss";
+@import "_ui-menu.scss";
+//@import "_feed.scss";
+//@import "_table.scss";
 
 @media screen and (max-width: $breakpoint_tablet) {
 
