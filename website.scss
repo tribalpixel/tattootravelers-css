@@ -9,6 +9,8 @@ $link_padding: 6px;
 $block_margin: 1em 0.5em;
 $color: #C00;
 
+$website_max_with:1800px;
+
 $breakpoint_tablet: 768px;
 $breakpoint_mobile: 425px;
 $breakpoint_mobile_small: 375px;
@@ -63,7 +65,7 @@ body {
     text-align: center;
     //font-family: 'Open Sans', sans-serif;
     font-family: 'open_sanslight', sans-serif;
-
+    max-width: $website_max_with;
 }
 
 strong {
@@ -330,8 +332,24 @@ hr {
 @import "_ui-dimmer.min.scss";
 @import "_ui-button.scss";
 @import "_ui-flag.scss";
+.origin i.flag { 
+    width:auto;
+    position: relative;
+    left:-18px;
+    top:12px;
+    margin:0;
+    padding:0;
+}
+
 @import "_ui-label.scss";
 @import "_ui-card.scss";
+
+.card div.name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -0.5em;
+}
+
 @import "_ui-images.scss";
 @import "_ui-transition.scss"; 
 @import "_ui-popup.scss";
@@ -340,8 +358,14 @@ hr {
 @import "_ui-statistic.scss";
 @import "_ui-segment.scss";
 @import "_ui-menu.scss";
+.ui.pagination.menu { width:100%; margin:0 auto; }
+@import "_ui-form.scss";
 //@import "_feed.scss";
 //@import "_table.scss";
+
+  .ui-autocomplete-loading {
+    background: white url("/modules/public/ui-anim_basic_16x16.gif") right center no-repeat;
+  }
 
 @media screen and (max-width: $breakpoint_tablet) {
 
