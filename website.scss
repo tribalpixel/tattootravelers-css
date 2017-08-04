@@ -9,11 +9,13 @@ $link_padding: 6px;
 $block_margin: 1em 0.5em;
 $color: #C00;
 
-$website_max_with:1800px;
+$website_max_with:1200px;
 
 $breakpoint_tablet: 768px;
 $breakpoint_mobile: 425px;
 $breakpoint_mobile_small: 375px;
+
+$card-width: 24rem;
 
 @import "_mixins"; 
 @import "_beta";
@@ -141,8 +143,8 @@ hr {
     //overflow: hidden;
 
     &>div {
-        display: inline-block;
-        vertical-align: top;
+/*        display: inline-block;
+        vertical-align: top;*/
     }
 
     ul {
@@ -152,13 +154,13 @@ hr {
 
 
         li {
-            padding: $padding/2 0;
+            /*padding: $padding/3 0;*/
         }
     }
 
     hr { display:none; }
 
-    @include hyperlinks();
+    //@include hyperlinks();
 
 }
 #cbySubMenu {
@@ -358,6 +360,7 @@ hr {
 @import "_ui-statistic.scss";
 @import "_ui-segment.scss";
 @import "_ui-menu.scss";
+.ui.menu { border:none; }
 .ui.pagination.menu { width:100%; margin:0 auto; }
 @import "_ui-form.scss";
 //@import "_feed.scss";

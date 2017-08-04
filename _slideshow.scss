@@ -15,24 +15,29 @@ $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\25A0" !default;
 $slick-next-character: "\25A0" !default;
 $slick-dot-character: "\25A0" !default;
-$slick-dot-size: 2rem !default;
+$slick-dot-size: 1rem !default;
 $slick-opacity-default: 1 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
-$arrow-size: 70px;
+$arrow-size: 1rem;
+$arrow-spacing: 35px;
 
 .slideshow,
 .slideshow-pics {
-    margin: 0 auto;
+    //margin: 0 auto;
     // border: 1px solid red;
     // position: relative;
-    width: 92%;
+    //width: 92%;
+}
+
+.slideshow {
+    height: 30rem;
 }
 
 .slideshow-pics {
 
     .slick-slide {
-        border: 1px solid #CCC;
+        //border: 1px solid #CCC;
         padding:0;
         margin: 0.5em;
         border-radius: 0.25rem;
@@ -91,10 +96,10 @@ $arrow-size: 70px;
 }
 
 .slick-prev {
-    left: -53px;
+    left: -$arrow-spacing;
     [dir="rtl"] & {
         left: auto; 
-        right: -53px;
+        right: -$arrow-spacing;
     }
     &:before {
         content: $slick-prev-character;
@@ -105,9 +110,9 @@ $arrow-size: 70px;
 }
 
 .slick-next {
-    right: -53px;
+    right: -$arrow-spacing;
     [dir="rtl"] & {
-        left: -53px;
+        left: -$arrow-spacing;
         right: auto;
     }
     &:before {
