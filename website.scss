@@ -9,13 +9,13 @@ $link_padding: 6px;
 $block_margin: 1em 0.5em;
 $color: #C00;
 
-$website_max_with:1200px;
+$website_max_with:1850px;
 
 $breakpoint_tablet: 768px;
 $breakpoint_mobile: 425px;
 $breakpoint_mobile_small: 375px;
 
-$card-width: 24rem;
+$card-width: 23rem;
 
 @import "_mixins"; 
 @import "_beta";
@@ -64,11 +64,13 @@ body {
     margin: 0;
     padding:0;
     margin: 0 auto;
-    text-align: center;
+    //text-align: center;
     //font-family: 'Open Sans', sans-serif;
     font-family: 'open_sanslight', sans-serif;
     max-width: $website_max_with;
 }
+
+
 
 strong {
  //font-family: 'open_sansbold', Arial, sans-serif;   
@@ -169,8 +171,8 @@ hr {
     //float:right;
 
     &>div {
-        display:inline-block;
-        vertical-align: middle;
+        //display:inline-block;
+        //vertical-align: middle;
     }
 
     &>div:first-child {
@@ -283,8 +285,8 @@ hr {
 /******************************************************************************/
 #cbyContent  {
 
-    text-align: left;
-    margin: $block_margin;
+    //text-align: left;
+    //margin: $block_margin;
     //border: 1px solid red;
 
     //overflow: scroll;
@@ -327,12 +329,13 @@ hr {
 @import "_modules.scss";
 //@import "_profiles.scss";
 @import "_pagerfanta.scss";
-@import "_slideshow.scss";
+//@import "_slideshow.scss";
  
 // SEMANTIC UI
 @import "_ui-grid.scss";
 @import "_ui-dimmer.min.scss";
 @import "_ui-button.scss";
+
 @import "_ui-flag.scss";
 .origin i.flag { 
     width:auto;
@@ -342,10 +345,9 @@ hr {
     margin:0;
     padding:0;
 }
-
 @import "_ui-label.scss";
-@import "_ui-card.scss";
 
+@import "_ui-card.scss";
 .card div.name {
     display: inline-block;
     vertical-align: middle;
@@ -363,6 +365,7 @@ hr {
 .ui.menu { border:none; }
 .ui.pagination.menu { width:100%; margin:0 auto; }
 @import "_ui-form.scss";
+@import "_ui-message.scss";
 //@import "_feed.scss";
 //@import "_table.scss";
 
@@ -400,7 +403,17 @@ hr {
 /******************************************************************************/
 /** NAVIGATION / FOOTER
 /******************************************************************************/
-
+#cbyFooter {
+    
+    & > div {
+        
+        margin: 0 auto;
+        display: table;
+    }
+    margin-top: 1em;
+    background-color: #1B1C1D;
+}
+/*
 #cbyFooter {
 
     border-top: 2px solid #000;
@@ -416,6 +429,7 @@ hr {
         @include flexi-list-nav-mobile();
     }
 }
+*/
 
 /******************************************************************************/
 /** POPUP FIXES
