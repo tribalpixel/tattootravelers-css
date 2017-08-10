@@ -9,7 +9,7 @@ $link_padding: 6px;
 $block_margin: 1em 0.5em;
 $color: #C00;
 
-$website_max_with:1850px;
+$website_max_with:1200px;
 
 $breakpoint_tablet: 768px;
 $breakpoint_mobile: 425px;
@@ -30,6 +30,7 @@ $card-width: 23rem;
 /**  FONTS
 /******************************************************************************/
 /**/
+/*
 @font-face {
     font-family: 'open_sanslight';
     src: url('../fonts/OpenSans-Light-webfont.woff') format('woff');
@@ -50,10 +51,11 @@ $card-width: 23rem;
     font-weight: normal;
     font-style: normal;
 }
-
+*/
 
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
-
+  @import url(http://allfont.net/allfont.css?fonts=open-sans);
+  
 /******************************************************************************/
 /** BASE LAYOUT 
 /******************************************************************************/
@@ -65,8 +67,8 @@ body {
     padding:0;
     margin: 0 auto;
     //text-align: center;
-    //font-family: 'Open Sans', sans-serif;
-    font-family: 'open_sanslight', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    //font-family: 'open_sanslight', sans-serif;
     max-width: $website_max_with;
 }
 
@@ -215,6 +217,12 @@ hr {
         }
     }
 
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {   
+    #cbyMenu a {
+        font-size:13px;
+    }
 }
 
 @media screen and (min-width: $breakpoint_tablet) {   
