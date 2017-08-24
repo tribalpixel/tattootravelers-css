@@ -2,9 +2,14 @@
 /* GENERAL MODULES */
 /******************************************************************************/
 .module-container {
+    border: 1px solid blue;
+    & > div {
+        border: 1px solid red;
+    }
+    
     h2 {
         //padding: $padding;
-        margin: 20px 0;
+        //margin: 20px 0;
     }
 }
 .module-header {
@@ -15,12 +20,18 @@
     }
 }
 .module-nav {
+    //.item { text-transform: capitalize; }
+    
     //@include flexi-list-nav(flex-start);
     //ul li { margin: 0 0.25em; }
     //ul li:first-child { margin: 0 0.25em 0 0; }
     //@include hyperlinks();
 }
-.module-content{}
+.module-content{
+   // display:block; 
+    //width:100%; 
+   // clear:both;  
+}
 
 .module-filters {}
 .module-no-results {}

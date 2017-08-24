@@ -6,7 +6,7 @@ body:after{
     position: fixed;
     width: 140px;
     height: 40px; 
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.95);
     top: 8px;
     left: -40px;
     text-align: center;
@@ -21,7 +21,7 @@ body:after{
     transform:rotate(-45deg);
 }
 @media screen and (max-width: $breakpoint_tablet) {
-/*
+
     body:after{    
         width: 75px;
         height: 20px;
@@ -33,5 +33,5 @@ body:after{
         -webkit-transform:rotate(-45deg);
         transform:rotate(-45deg);
     }
-    */
+    
 }

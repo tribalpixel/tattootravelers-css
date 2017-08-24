@@ -24,14 +24,14 @@ $arrow-spacing: 35px;
 
 .slideshow,
 .slideshow-pics {
-    //margin: 0 auto;
-    // border: 1px solid red;
-    // position: relative;
-    //width: 92%;
+    margin: 0 auto;
+     border: 1px solid red;
+     display:block;
+     width:100%;
 }
 
 .slideshow {
-    height: 30rem;
+    height: 25rem;
 }
 
 .slideshow-pics {

@@ -1,0 +1,335 @@
+/******************************************************************************/
+/* 04/2017 | Author: Tribalpixel 
+/******************************************************************************/
+/******************************************************************************/
+@charset "utf-8";
+
+$padding: 4px;
+$link_padding: 6px;
+$block_margin: 1em 0.5em;
+$color: #C00;
+
+$website_max_with:1200px;
+
+$breakpoint_tablet: 768px;
+$breakpoint_mobile: 425px;
+$breakpoint_mobile_small: 375px;
+
+$card-width: 24rem;
+
+@import "_mixins"; 
+@import "_beta";
+@import "_normalize";
+/******************************************************************************/
+/**  OLD CSS
+/******************************************************************************/
+@import "_dataset.scss";
+@import "_oldstyles.scss";
+
+/******************************************************************************/
+/**  FONTS
+/******************************************************************************/
+
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url(http://allfont.net/allfont.css?fonts=open-sans);
+@import url(http://allfont.net/allfont.css?fonts=open-sans-bold);
+
+/******************************************************************************/
+/** BASE LAYOUT 
+/******************************************************************************/
+
+*,html { 
+    //box-sizing: border-box; 
+    font-family: 'Open Sans', sans-serif; 
+}
+
+body {
+    //padding:10px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    max-width: $website_max_with;
+}
+
+strong {
+    font-family: 'Open Sans Bold', sans-serif;  
+}
+
+ul, 
+li { 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/******************************************************************************/
+/** NAVIGATION / HEADER
+/******************************************************************************/
+#cbyHeader {
+     border-bottom: 1px solid black;
+    //padding: 0 0 10px 0px;
+    margin: 0 0 20px 0;   
+}
+
+/*
+#cbyHeader {
+    display: inline-grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-areas: 
+        "logo header"
+        "admin admin";
+
+    margin: 1rem 0;
+    border: 1px solid orange;
+    width: 100%; 
+    border-bottom: 1px solid black;
+    padding: 0 0 10px 0px;
+    margin: 0 0 20px 0;
+}
+
+#cbyLogo {
+    grid-area: logo;  
+    align-self: start;
+}
+
+#cbyMenu {
+    //border: 1px solid red;
+    grid-area: header;
+    justify-self: stretch;
+    align-self: center;
+}
+
+#cbyMenuAdmin {
+    grid-area: admin;
+    justify-self: stretch;
+    align-self: center;
+}
+*/
+#cbySocial {
+
+    a,
+    a.hover {
+        //opacity: 0.5;
+
+        &:hover {
+           // opacity: 1;
+           text-decoration: none;
+        }
+    }  
+
+}
+
+#cbyLangMenu, .menuExtra {
+
+    * { text-transform: uppercase; }
+
+    input {
+        border: none;
+        padding: 0.25rem 0;
+        background-color: transparent;
+
+        &:hover {
+            cursor: pointer;   
+        }
+    }
+
+    ul, ul li ul {
+        max-height: none;
+        overflow: auto;
+    }
+
+}
+
+@import "_slicknav";
+
+/******************************************************************************/
+/**  MAIN CONTENT
+/******************************************************************************/
+#cbyContent  {}
+
+.field_artist, .field_style{
+    height: 32px;
+    display: inline-block;
+}
+.field_style {
+    padding: 0 10px;
+}
+/*
+.contentLeft {
+    float:left;
+    width: 29%;
+    margin-right: 1em;
+
+    div.deco  {
+        height: 25em;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width:100%;
+            height: auto;
+            vertical-align: middle;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+.contentRight {
+    float:left;
+    width:69%;
+}
+*/
+.dataset {
+    text-align: initial;    
+}
+
+#go-top-btn {
+    position: fixed; 
+    bottom:10px;
+    right:10px;
+}
+
+//@import "_modules.scss";
+//@import "_profiles.scss";
+//@import "_pagerfanta.scss";
+//@import "_slideshow.scss";
+
+// SEMANTIC UI
+@import "_ui-grid.scss";
+@import "_ui-menu_old.scss";
+@import "_ui-dimmer.min.scss";
+@import "_ui-button.scss";
+@import "_ui-icon.scss";
+@import "_ui-flag.scss";
+.origin i.flag { 
+    width:8px;
+    position: relative;
+    left:-20px;
+    top:12px; 
+    margin:0;
+    padding:0;
+}
+@import "_ui-label.scss";
+@import "_ui-card.scss";
+.card div.name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -0.5em;
+}
+
+@import "_ui-images.scss";
+@import "_ui-transition.scss"; 
+//@import "_ui-popup.scss";
+//@import "_ui-item.scss";
+//@import "_ui-statistic.scss";
+@import "_ui-segment.scss";
+
+
+@import "_ui-form.scss";
+//@import "_ui-input.scss";
+//@import "_ui-message.scss";
+//@import "_feed.scss";
+//@import "_table.scss";
+
+.ui-autocomplete-loading {
+    background: white url("/modules/public/ui-anim_basic_16x16.gif") right center no-repeat;
+}
+
+@media screen and (max-width: $breakpoint_tablet) {
+
+    #cbyContent {
+        // overflow-x: auto;
+    }
+
+    .contentLeft {
+        //display:none !important;
+    }
+    .contentLeft,
+    .contentRight {
+        //border: 1px solid red;
+        flex:none;
+        float:none;
+        display: block;
+        width:100%;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    div.cbyDataset span.title {
+        font-size: 18px;
+        line-height: 17px;
+    }
+}
+
+
+/******************************************************************************/
+/** NAVIGATION / FOOTER
+/******************************************************************************/
+#cbyFooter {
+    /*border: 1px solid orange;*/
+ 
+    border-top: 1px solid black;
+    padding: 10px 0 0 0;
+    margin: 20px 0 0 0;
+}
+/*
+
+#cbyFooter {
+
+    border-top: 2px solid #000;
+    margin: $block_margin;
+    padding: 2*$padding;
+
+    @include flexi-list-nav();
+    @include hyperlinks();
+}
+
+@media screen and (max-width: $breakpoint_tablet) {
+    #cbyFooter {
+        @include flexi-list-nav-mobile();
+    }
+}
+*/
+
+/******************************************************************************/
+/** POPUP FIXES
+/******************************************************************************/
+@media screen and (max-width: $breakpoint_mobile) {
+
+
+    #cbyPop1 div.logo { 
+        //display:none;
+        top:25px;
+        right:70px;
+        img {
+            height:120px!important; 
+        }
+    }
+    #cbyPop1 .people2  {
+
+        img {
+            height:140px!important; 
+        }
+    }
+    #cbyPop1 div.resume {
+        li {
+            float: none;
+
+        }
+
+        h4, h4.space {  
+            margin:0; }
+    }
+}
+
+@media screen and (min-width: $breakpoint_tablet) {
+    #cbyPop1 {
+        max-width:700px;
+        margin:auto;
+    }
+
+    /*    #cbyPop1 div.logo { 
+            display:none;
+        }*/
+}

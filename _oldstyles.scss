@@ -2,10 +2,10 @@
 
 /*---------- first part: Generic tags --------------*/
 
-* { margin:0px; padding:0px; outline:0 none;}
+//* { margin:0px; padding:0px; outline:0 none;}
 
 /* useful if content is centered (avoid lateral jump when scrollbar appears) */
-html { overflow-y: scroll; }	
+//html { overflow-y: scroll; }	
 
 //body  { font-family: Dosis, 'Archivo Narrow', sans-serif; font-size:15px; font-weight:200 }
 //body  { font-family: 'Open Sans', sans-serif; font-size:13px; font-weight:200 }
@@ -18,11 +18,7 @@ li img { vertical-align:middle}
 
 img {border:0; vertical-align:top;}
 
-a { outline:0 none; color: #333; text-decoration: none; }
-a:hover { text-decoration: underline; }
-a.nodeco:hover { text-decoration: none; }
-a.hover { opacity:0.5 }
-a.hover:hover { opacity:1 }
+
 table, td, th { border-collapse:collapse; border:0; border-spacing: 0px;}
 td, th {vertical-align:top;}
 
@@ -112,7 +108,7 @@ div.legal table td{width:33%;padding:10px;border:1px solid #ccc;vertical-align:m
     position: absolute;
     //right: 12px;
     //top:-38px;
-    right: 67px;
+    right: 20px;
     top:21px;
     z-index: 100;
 }
@@ -147,7 +143,7 @@ li.line.highlight{ box-shadow: 4px 0px 4px #666;background-color:#F9F9F9; }
 #search_members_list li.line.info {padding:14px;text-align:center}
 
 //div.shadow {border:1px solid #ccc;border-radius:5px;box-shadow: 3px 3px 6px #aaa}
-h1, h2, h3, h4, h5, h6, div.filters th  {	font-weight:400}
+//h1, h2, h3, h4, h5, h6, div.filters th  {	font-weight:400}
 //h1 {margin:12px 0 5px; font-size:21px;}
 //h2 {margin:12px 0 5px; font-size:21px;}
 p {margin:5px 0;line-height:1.4em}
