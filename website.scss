@@ -1,7 +1,7 @@
-@import url(http://allfont.net/allfont.css?fonts=open-sans);
-@import url(http://allfont.net/allfont.css?fonts=open-sans-bold);
+//@import url(http://allfont.net/allfont.css?fonts=open-sans);
+//@import url(http://allfont.net/allfont.css?fonts=open-sans-bold);
 
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
 
 $website_max_with:1200px;
 $breakpoint_tablet: 767px;
@@ -34,14 +34,15 @@ $link_padding: 0.25rem;
 @import "_ui-flag";
 @import "_ui-icon";
 @import "_ui-label";
+@import "_ui-list";
 @import "_ui-button";
-@import "_ui-breadcrumb.scss";
-@import "_ui-card";
+@import "_ui-breadcrumb";
+@import "_ui-card"; 
 @import "_ui-dimmer.min";
 @import "_ui-transition"; 
 @import "_ui-form";
 @import "_ui-message";
-@import "_ui-popup.scss";
+@import "_ui-popup";
 
 ////////////////////////////////////////////////////////////////////////////////
 // BASE LAYOUT 
@@ -100,6 +101,11 @@ a {
     &:hover { text-decoration: underline; }
 }
 
+small {
+    color:#aaa;
+    font-size:small;
+}
+
 a.nodeco:hover { text-decoration: none; }
 a.hover { opacity:0.5 }
 a.hover:hover { opacity:1 }
@@ -118,7 +124,7 @@ a.hover:hover { opacity:1 }
 #cbyHeader {
     //border-bottom: 2px solid black;
     //padding: 0 0 10px 0px;
-    margin: 0 0 2rem 0;  
+    margin: 1rem 0;  
     .column:not(.row), .row > .column {
         padding:0;
     }
@@ -185,13 +191,29 @@ a.hover:hover { opacity:1 }
 .ui.button {
     font-weight: normal;
 }
-#cbyLangMenu {
 
-    //border:1px solid red;
-    position: absolute;
-    top:0;
-    right: 0;
-    // display:block;
+#cbyTopMenu {
+    //position:absolute;
+    //top:0;
+    min-height: 1em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin:0;
+    padding: 0;
+    //border: 1px solid red;
+    
+}
+
+#cbyUserInfos {
+    padding-right: 1rem;
+
+}
+
+#cbyLangMenu {
 
     padding: 0.438em 0.625em 0.438em 0.625em;
     line-height: 1.125em;
@@ -260,7 +282,7 @@ a.hover:hover { opacity:1 }
         padding: 0.4em;
         margin: 0.0725em 0.125em;
     }
-    #cbyLangMenu {
+    #cbyTopMenu {
         font-size: smaller;
         padding:0.125rem;
         input {
@@ -282,7 +304,7 @@ a.hover:hover { opacity:1 }
         //margin: 0;   
     } 
 
-    #cbyLangMenu {
+    #cbyTopMenu {
         font-size: initial;
         padding: 0.438em 0.625em 0.438em 0.625em;
         top: 0.5rem;
@@ -300,7 +322,7 @@ a.hover:hover { opacity:1 }
 }
 
 @media only screen and (max-width: $breakpoint_mobile) {
-    #cbyLangMenu {
+    #cbyTopMenu {
         padding: 0.25em;
     }
     .ui.container {
@@ -315,6 +337,38 @@ a.hover:hover { opacity:1 }
     }
 }
 
+.slide{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+        background: url("../modules/public/BANNER_TT_4.jpg") no-repeat no-repeat center center;
+    width:100%;
+    min-height: 360px;
+
+    //border: 1px solid red;
+}
+
+.slide-header {
+    
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 //  MAIN CONTENT
 ////////////////////////////////////////////////////////////////////////////////
@@ -328,8 +382,9 @@ a.hover:hover { opacity:1 }
 }
 
 .card {
-    a.no-deoration {
-      text-decoration: none;  
+
+    a.no-decoration, .dimmer a {
+        text-decoration: none;  
     }
 }
 
@@ -338,6 +393,7 @@ a.hover:hover { opacity:1 }
     vertical-align: middle;
     margin-left: -0.5em;
     min-height: 1.25em;
+    max-width: 75%;
 }
 .ui.labels > .label {
     margin: 0em 0.25em 0.25em 0em;
@@ -349,7 +405,7 @@ a.hover:hover { opacity:1 }
 
 
 @media only screen and (max-width: $breakpoint_tablet) {
-    .computer-only img { display:none; }
+    .computer-only { display:none; }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
