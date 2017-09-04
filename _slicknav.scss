@@ -1,9 +1,13 @@
 .slicknav_menu {
     display:none;
 }
+.slicknav_brand {
+    img { width:200px; }  
+}
 @media screen and (max-width: $breakpoint_mobile_small) {
+    .slicknav_btn { margin-top: 1.25em !important; }
     .slicknav_brand {
-        img { width:200px; }  
+        img { width:160px; }  
     } 
 }
 @media screen and (max-width: $breakpoint_tablet) {
@@ -25,9 +29,10 @@
  * licensed under MIT
  */
 .slicknav_btn {
-    position: absolute;
-    top:3em;
-    right:0.625em;
+    //position: absolute;
+    //top:3em;
+    //right:0.625em;
+    margin-top: 1.925em;
     display: block;
     vertical-align: middle;
     float: right;
@@ -102,7 +107,7 @@
     font-size: 1rem;
     box-sizing: border-box;
     background: #FFF;
-    padding: 10px 10px 0 10px; 
+    //padding: 10px 10px 0 10px; 
     width: 100%;
 }
 .slicknav_menu * {
@@ -182,5 +187,5 @@
     //width:50%;
     //line-height: 30px;
     //padding: 7px 12px;
-   // height: 90px; 
+    // height: 90px; 
 }

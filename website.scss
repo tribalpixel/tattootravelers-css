@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
 
+
 $website_max_with:1200px;
 $breakpoint_tablet: 767px;
 $breakpoint_mobile: 425px;
@@ -44,6 +45,7 @@ $link_padding: 0.25rem;
 @import "_ui-message";
 @import "_ui-popup";
 
+
 ////////////////////////////////////////////////////////////////////////////////
 // BASE LAYOUT 
 ////////////////////////////////////////////////////////////////////////////////
@@ -56,6 +58,7 @@ html {
     box-sizing: border-box;
 }
 body {
+    //font-family: 'Open Sans', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     margin:0;
@@ -64,9 +67,12 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     //font-family: 'Open Sans Bold', sans-serif;
+    
     font-weight: normal;
     margin: 0.25rem 0;
-
+    
+    //display: inline;
+    
     span {
         color:#aaa;
         font-size: small;
@@ -90,7 +96,7 @@ li {
     list-style: none; 
     margin: 0;
     padding: 0;
-    text-align: left;
+    //text-align: left;
 }
 
 a { 
@@ -124,7 +130,7 @@ a.hover:hover { opacity:1 }
 #cbyHeader {
     //border-bottom: 2px solid black;
     //padding: 0 0 10px 0px;
-    margin: 1rem 0;  
+    margin: 0.25rem 0;  
     .column:not(.row), .row > .column {
         padding:0;
     }
@@ -173,6 +179,16 @@ a.hover:hover { opacity:1 }
 .ui.menu>.item:last-child {
     border-radius: 0;
 }
+.ui.pointing.menu .active.item:after {
+    background-color: rgba(0,0,0,1);
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    
+    &:hover {
+       background-color: rgba(0,0,0,1);  
+    }
+}
+
 .ui.pagination.menu a.item {
     //padding:0;
     //text-align: center;
@@ -192,18 +208,15 @@ a.hover:hover { opacity:1 }
     font-weight: normal;
 }
 
-#cbyTopMenu {
-    //position:absolute;
-    //top:0;
-    min-height: 1em;
+#cbyBarMenu {
 
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 
-    margin:0;
-    padding: 0;
+    //margin:0;
+    //padding: 0;
     //border: 1px solid red;
     
 }
@@ -215,11 +228,12 @@ a.hover:hover { opacity:1 }
 
 #cbyLangMenu {
 
-    padding: 0.438em 0.625em 0.438em 0.625em;
+    padding: 0.425em 0.625em 0.425em 0.625em;
     line-height: 1.125em;
-    //margin: 0.125em 0.25em;
+    margin: 0.125em 0.25em;
     background-color: #000;
     color: #FFF;
+    display: inline-block;
 
     * { text-transform: uppercase; }
 
@@ -228,7 +242,7 @@ a.hover:hover { opacity:1 }
         //padding: 0.25rem;
         background-color: transparent;
         color:#FFF;
-        text-shadow: 0 1px 3px #000;
+        //text-shadow: 0 1px 3px #000;
         &:hover {
             cursor: pointer;   
         }
@@ -274,6 +288,14 @@ a.hover:hover { opacity:1 }
 }
 
 @media only screen and (max-width: 991px) {
+    
+#cbyLangMenu { 
+    input { font-size: smaller; }
+            padding: 0.325em;
+        margin: 0 0 0 10px;
+        width:60px;
+}    
+
     .ui.menu {
         margin: 0.5rem 0;
         font-size: smaller;
@@ -282,38 +304,10 @@ a.hover:hover { opacity:1 }
         padding: 0.4em;
         margin: 0.0725em 0.125em;
     }
-    #cbyTopMenu {
-        font-size: smaller;
-        padding:0.125rem;
-        input {
-            //padding:0.125rem;
-            font-size: smaller;
 
-        }
-    }
 }
 
 @media only screen and (max-width: $breakpoint_tablet) {
-    .ui.floated.menu,
-    .ui.right.floated.menu {
-        float: none;
-        margin:0;
-    }
-    #cbyHeader {
-        // border-bottom: none;
-        //margin: 0;   
-    } 
-
-    #cbyTopMenu {
-        font-size: initial;
-        padding: 0.438em 0.625em 0.438em 0.625em;
-        top: 0.5rem;
-        input {
-            //padding:0.125rem;
-            font-size: initial;
-
-        }
-    }    
 
     .countries-list {
         @include flexi-list-column-links(2);
@@ -322,52 +316,45 @@ a.hover:hover { opacity:1 }
 }
 
 @media only screen and (max-width: $breakpoint_mobile) {
-    #cbyTopMenu {
-        padding: 0.25em;
-    }
-    .ui.container {
-        margin-left: 0.25em !important;
-        margin-right: 0.25em !important;
-    }   
-    .ui.grid > * {
-        //padding:0;
-    }
-    .ui.grid > .row > .column {
-        //padding:0;
-    }
+
 }
 
-.slide{
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
 
-        background: url("../modules/public/BANNER_TT_4.jpg") no-repeat no-repeat center center;
-    width:100%;
-    min-height: 360px;
 
-    //border: 1px solid red;
+//@import "_slideshow.scss";
+
+.slide {
+    position: relative;
+
+    //width:100%;
+    //padding: 1rem;
+    //min-height: 360px;
+    //overflow: hidden;
 }
 
-.slide-header {
-    
+.slide-header { 
+    position: absolute; 
+    top:15%; 
+    left:30px; 
+    margin-right: 30px!important;
+}
+.slide-text { 
+    position: absolute; 
+    top:55%; 
+    right:30px; 
+    //left:30px; 
+    margin-left: 30px!important;
+    text-align:right; 
 }
 
+
+
+/**/
+@media only screen and (max-width: $breakpoint_mobile) { 
+    .slide {
+      height: 180px!important;
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //  MAIN CONTENT
@@ -405,7 +392,7 @@ a.hover:hover { opacity:1 }
 
 
 @media only screen and (max-width: $breakpoint_tablet) {
-    .computer-only { display:none; }
+    .computer-only { display:none !important; }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -415,14 +402,17 @@ a.hover:hover { opacity:1 }
     text-align: center;
     border-top: 2px solid black;
     margin: 3rem 0;
-
-    .column {padding:0 !important;}
+    .column { padding:0 !important; text-align: center; }
+    .menu { margin:1rem 0 ; }
 }
 
 #cbySocial { 
     a:hover { text-decoration: none; }
 }
 
+@media screen and (max-width: $breakpoint_mobile) {
+  
+}
 ////////////////////////////////////////////////////////////////////////////////
 // POPUP FIXES
 ////////////////////////////////////////////////////////////////////////////////
