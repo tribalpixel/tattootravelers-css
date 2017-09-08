@@ -4,24 +4,41 @@
 .slicknav_brand {
     img { width:200px; }  
 }
-@media screen and (max-width: $breakpoint_mobile_small) {
-    .slicknav_btn { margin-top: 1.25em !important; }
-    .slicknav_brand {
-        img { width:160px; }  
-    } 
-}
+
 @media screen and (max-width: $breakpoint_tablet) {
     /* #menu is the original menu */
-    #cbyMenu, #cbyLogo
-    {
-        display:none !important;
+    #cbyMenu, #cbyLogo { display:none !important; }
+    
+    body { margin-top:80px; }
+    
+    .slicknav_menu {
+        position: fixed;
+        top:0;
+        left:0; right:0;
+        z-index:299;
     }
-
+    
     .slicknav_menu {
         display:block;
+        
+        .cbyConnexionMenu {
+            display:flex;
+            justify-content: center;
+        }
+        
+        .ui.right.floated.menu,.ui.left.floated.menu, {
+            float:none!important;
+                margin: 0.5rem 0;
+        }
     }
 }
-
+@media screen and (max-width: $breakpoint_mobile_small) {
+    body { margin-top:75px; }
+    //.slicknav_btn { margin-top: 1.25em !important; }
+    .slicknav_brand {
+        img { width:190px; }  
+    } 
+}
 
 /**
  * SlickNav Responsive Mobile Menu v1.0.10
@@ -58,7 +75,7 @@
     width: 1.125em;
     height: 0.875em;
     display: block;
-    content: "";
+    content: ".";
     position: absolute; }
 .slicknav_menu .slicknav_no-text {
     margin: 0; }
@@ -139,7 +156,7 @@
     list-style: none;
     overflow: hidden;
     border:none;
-    border-top: 2px solid #000;
+    //border-top: 2px solid #000;
     border-bottom: 2px solid #000;
 }
 .slicknav_nav ul {
