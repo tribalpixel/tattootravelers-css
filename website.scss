@@ -296,7 +296,7 @@ a.hover:hover { opacity:1 }
 
     #cbyLangMenu { 
         input { font-size: smaller; width:59px !important }
-        padding: 0.325em;
+        padding: 0.25em;
         margin: 0 0 0 10px;
         font-size: smaller;
     } 
@@ -319,6 +319,10 @@ a.hover:hover { opacity:1 }
 
 }
 
+.block .content {
+    margin-top:1em;
+}
+
 @media only screen and (max-width: $breakpoint_tablet) {
 
     .countries-list {
@@ -329,17 +333,26 @@ a.hover:hover { opacity:1 }
         position:fixed;
         top:3px;
         right:16px;
-        z-index: 999;
+        z-index: 299;
     }
 
 }
 
 @media only screen and (max-width: $breakpoint_mobile) {
-
+    .ui.form input:not([type]), .ui.form input[type="date"], 
+    .ui.form input[type="datetime-local"], .ui.form input[type="email"], 
+    .ui.form input[type="number"], .ui.form input[type="password"], 
+    .ui.form input[type="search"], .ui.form input[type="tel"], .ui.form input[type="time"], 
+    .ui.form input[type="text"], .ui.form input[type="file"], .ui.form input[type="url"]
+    {
+        padding:3px;
+    }
+    //#cbyContent > div > div.contentRight.ten.wide.column > div > div > div.block.availability > div.content > div.not > div > table > tbody > tr > td:nth-child(2) { display:none; }
+    table.booking-availability > tbody > tr > td:first-child img { display:none !important; }
+    table.booking-availability > tbody > tr > td:nth-child(2) { display:none !important; }
+    div.cbyDataset  { font-size: smaller; }
 }
 
-
-//@import "_slideshow.scss";
 
 .slide {
     position: relative;
@@ -373,14 +386,14 @@ a.hover:hover { opacity:1 }
     font-size: 1.5rem;
 }
 @media only screen and (max-width: $breakpoint_tablet) {
-     .slide-header{ 
+    .slide-header{ 
         h2 { font-size: 1.75rem; }
     }
     .slide-text { font-size: 1rem; }   
 }
 @media only screen and (max-width: $breakpoint_mobile) { 
     .slide {
-
+        text-shadow: 2px 2px rgba(0,0,0,.75);
         font-size: 1em; 
     }
     .slide-header{ 
@@ -470,39 +483,37 @@ ui.button,
     a:hover { text-decoration: none; }
 }
 
-@media screen and (max-width: $breakpoint_mobile) {
-
+@media screen and (max-width: 670px) {
+    #mywall > table > tbody > tr > td.label > span {
+        display:block;
+        margin: 3px 0;
+    }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // POPUP FIXES
 ////////////////////////////////////////////////////////////////////////////////
 @media screen and (max-width: $breakpoint_mobile) {
-
-    /*
-        #cbyPop1 div.logo { 
-            //display:none;
-            top:25px;
-            right:70px;
-            img {
-                height:120px!important; 
-            }
-        }
-        #cbyPop1 .people2  {
     
-            img {
-                height:140px!important; 
-            }
-        }
-        #cbyPop1 div.resume {
-            li {
-                float: none;
-    
-            }
-    
-            h4, h4.space {  
-                margin:0; }
-        }
-    */
+   div.logo { 
+       //img { width:150px; } 
+       img { display:none !important; } 
+   }
+   
+   div.media_convention div.field_image img, 
+   div.media_studio div.field_image img, 
+   div.media_artist div.field_image img, 
+   div.media_fan div.field_image img, 
+   { 
+       width: 150px; 
+   }
+   
+   div.resume {
+       //ul.people2 li:first-child img { height: 130px !important; }
+       ul.people2 li:first-child img { display:none !important; }
+       ul.people2 li h2 { font-size: 1.25em; }
+       ul.people2 li h2:first-child { padding-top: 10px; font-size: 1.5em; }
+       ul.people2 li h4.space { margin: 3px 0; }
+   }
 }
 @media screen and (min-width: $breakpoint_tablet) {
     #cbyPop1 {

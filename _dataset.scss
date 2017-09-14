@@ -3,7 +3,18 @@ div.dataset {}
 div.dataset input, div.dataset select, div.dataset textarea {font-family:verdana;font-size:11px;background-color:#fff;border:1px solid #eee;border-radius:3px;padding:2px;width:200px}
 div.dataset textarea {width:95%;height:100px}
 div.dataset input[type=checkbox], div.dataset input[type=radio] {width:auto;vertical-align:middle;margin-right:10px}
-div.dataset a.button {background-color:#FFF; color:#000; font-weight: bold;display:inline-block;border:2px solid #000;min-width:4em;cursor:pointer;padding:3px 10px;text-align:center;user-select: none;-moz-user-select: none}
+div.dataset a.button {
+  //  background-color:#FFF; 
+ //   color:#000; font-weight: bold;
+  //  display:inline-block;
+ //   border:2px solid #000;
+ //   min-width:4em;
+  //  cursor:pointer;
+  //  padding:3px 10px;
+  //  text-align:center;
+ //   user-select: none;
+  //  -moz-user-select: none;
+}
 div.dataset a.button:hover, div.dataset span:hover a.button {background-color:#000;color:#FFF;text-decoration:none}
 div.dataset a.button img {vertical-align:middle;}
 
@@ -21,7 +32,17 @@ div.dataset div.header span.logged {float:right;margin-right:10px;font-style:ita
 div.dataset span.title {line-height:22px;font-size:1.2em;font-weight:bold}		/* line-height: to match buttons */
 div.dataset span.openclose {cursor:pointer;background: url("/img/dataset/caret_right.png") no-repeat scroll 0px center transparent;padding-left: 20px;}
 div.dataset span.open {background-image: url("/img/dataset/caret_down.png")}
-div.dataset div.buttons {position:absolute;right:10px;top:7px}
+//div.dataset div.buttons {position:absolute;right:10px;top:7px}
+div.dataset div.buttons {
+    position:absolute;
+    right:0px;
+    top:5px;
+    &:after {
+        content: '';
+        clear:both;
+        display:block;     
+    }
+}
 
 /* general rules for table dataset */
 div.dataset table {width: 100%;margin:10px 0}
@@ -34,7 +55,7 @@ div.dataset table.autocolumns2 td.dataset {width:33%}
 div.dataset table th.dataset, div.dataset table td.dataset {border-color:#ccc #fff; border-style:solid; border-width: 1px 5px 1px 0;padding:5px; vertical-align:middle}
 div.dataset table th.dataset {color:#444; border-color:#666 #fff; text-align:left; font-style:italic; font-weight: normal}
 
-div.dataset table.table tbody tr {cursor:pointer}
+//div.dataset table.table tbody tr {cursor:pointer}
 div.dataset table.data th.dataset {text-align:right;border-color:#fff;padding-right:10px;vertical-align:top}
 div.dataset div.address_artist table.data th.dataset, div.dataset div.address_studio table.data th.dataset {vertical-align:middle}
 div.dataset table.data td.dataset {min-height:17px}					/* to keep same height when editing */
@@ -65,9 +86,10 @@ div.dataset ul.list li.dataset:hover div.remove  {display:block;}
 div.dataset ul.list li.dataset.removed div.remove  {display:block;}
 div.dataset ul.list li.dataset div.dragsort  {cursor:move;display:none;background: url(/img/dataset/dragsort.png) repeat scroll 0 0 #FF0000;height: 27px;width: 27px;position: absolute;right:0}
 div.dataset ul.list li.dataset:hover div.dragsort  {display:block;}
-/* next: tmp because image were not good sizes! */
-div.dataset div.media_tattoo li.dataset ,div.dataset div.media_piercing li.dataset ,div.dataset div.media_studio li.dataset {max-width:156px}
-div.dataset.people_details div.media_tattoo li.dataset ,div.dataset.people_details div.media_piercing li.dataset ,div.dataset.people_details div.media_studio li.dataset {height:163px}	/* overriden with js in js_cbyDataset */
+/* next: tmp because image were not good sizes! 
+div.dataset div.media_tattoo li.dataset ,div.dataset div.media_piercing li.dataset ,div.dataset div.media_studio li.dataset {max-width:156px}*/
+/* overriden with js in js_cbyDataset 
+div.dataset.people_details div.media_tattoo li.dataset ,div.dataset.people_details div.media_piercing li.dataset ,div.dataset.people_details div.media_studio li.dataset {height:163px}	*/
 
 div.dataset div.onefield {text-align:center;margin:10px 0}			/* a onefield (layout=div) dataset_block */
 

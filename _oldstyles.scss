@@ -88,7 +88,7 @@ div.legal table td{width:33%;padding:10px;border:1px solid #ccc;vertical-align:m
     right:0;
     left:0;
     //bottom:20%;
-    z-index:300;
+    z-index:500;
     box-shadow: 0px 0px 12px #333;
 }
 #cbyPop1:after {		/* to be sure to have a margin (space at the bottom)*/
@@ -116,8 +116,8 @@ div.legal table td{width:33%;padding:10px;border:1px solid #ccc;vertical-align:m
 #cbyPop1 div.resume li {float:left;margin-right:10px;max-width: 280px;line-height:1.2em}
 #cbyPop1 div.resume li li{float:none}
 #cbyPop1 div.resume li ul{margin-left:20px}
-#cbyPop1 div.resume h4{margin-bottom:3px}
-#cbyPop1 div.resume h4.space {margin-bottom:8px}
+//#cbyPop1 div.resume h4{margin-bottom:3px}
+//#cbyPop1 div.resume h4.space {margin-bottom:8px}
 
 
 div.padding {padding:10px 0}
@@ -126,11 +126,11 @@ div.fancybox-title td img {margin-left:5px}
 table.padding td, table.padding th {padding:5px;}
 
 #search_members_count {width:90%}
-div.filters {background-color:#f9f9f9;border:0px solid #ddd;padding:0;margin:10px 0;border-radius:4px}
-div.filters table {margin:0}
-div.filters th, div.filters td{padding:0px;border:6px solid #f9f9f9;padding-left:2em}
-div.filters th {text-align:right;line-height:18px;}
-div.filters input[type=checkbox]{margin-left:-2em;vertical-align: bottom;}
+//div.filters {background-color:#f9f9f9;border:0px solid #ddd;padding:0;margin:10px 0;border-radius:4px}
+//div.filters table {margin:0}
+//div.filters th, div.filters td{padding:0px;border:6px solid #f9f9f9;padding-left:2em}
+//div.filters th {text-align:right;line-height:18px;}
+//div.filters input[type=checkbox]{margin-left:-2em;vertical-align: bottom;}
 #search_members_list {}
 div.contentLeft ul li.line{margin:2px 19px 9px 2px;box-shadow: 4px 0 4px #999999;}
 li.line {position:relative}
@@ -152,7 +152,13 @@ div.loading {width:100%;min-height:400px;background-image: url("/img/dataset/aja
 div.loading-compact {width:100%;min-height:40px;background-image: url("/img/dataset/ajax-loader-4.gif");background-position:50% 50%;background-repeat: no-repeat;}
 .loadingR {background: url("/img/dataset/ajax-loader-4.gif") no-repeat scroll right center transparent;}
 
-ul.people1 li{float:left;margin-right:10px;max-width:185px;overflow:hidden;white-space:nowrap}
+ul.people1 li{
+    float:left;
+    margin-right:10px;
+    max-width:185px;
+    //overflow:hidden;     
+    //white-space:nowrap
+}
 ul.people1 li.large-display{max-width:240px;}
 ul.people1 li h2{margin-top:5px}
 //div#list_artist img.highlight{transform: scale(1.1,1.1);box-shadow: 0px 0px 8px #000;}
@@ -161,11 +167,11 @@ ul.people1 li h2{margin-top:5px}
 
 /* new dataset styles by CG */
 #cbyPop1 .resume div.header {display:none;}
-#cbyPop1 .resume {border-bottom:2px solid #000;}
-#cbyPop1 .resume .field_image img {height:192px;}
+//#cbyPop1 .resume {border-bottom:2px solid #000;}
+//#cbyPop1 .resume .field_image img {height:192px;}
 
 div.cbyDataset div.header {
-    padding: 9px 0;
+    padding: 3px 0;
     background-image:none;
 }
 #cbyPop1 .media li.dataset {
@@ -176,17 +182,24 @@ div.cbyDataset div.header {
     margin: 0 12px 12px 0;
 }
 div.cbyDataset span.title {
-    line-height:22px;	/* line-height: to match buttons */
-    font-size:21px;
+    //line-height:22px;	/* line-height: to match buttons */
+    //font-size:21px;
     text-transform:uppercase;
-    font-weight:200;
+    font-weight:normal;
 }
 //a.forgetpasswd {position:relative;top:-38px;left:330px}
-#cbyPop1  div.block.resume {margin-bottom:0px;position:relative}
+#cbyPop1  div.block.resume {
+// margin-bottom:0px;
+    position:relative
+}
 #cbyPop1  div.field_type1, #cbyPop1  div.field_address_country {display:inline;}
-#cbyPop1 h2 {margin:0;font-size:21px; line-height: 23px}
-#cbyPop1  h2 + h4 {margin-top:5px;}
-#cbyPop1  h3, #cbyPop1  h4 {margin-bottom:5px;}
+#cbyPop1 h2 {
+    //margin:0;
+    //font-size:21px; 
+    //line-height: 23px
+}
+//#cbyPop1  h2 + h4 {margin-top:5px;}
+//#cbyPop1  h3, #cbyPop1  h4 {margin-bottom:5px;}
 #cbyPop1  div.resume {z-index:10; }
 //#cbyPop1 div.people_details ul.list div.field_style {display:none}
 ul.list div.field_style {overflow: hidden;text-overflow: ellipsis;width: 156px;white-space: nowrap;}
@@ -209,10 +222,11 @@ div.fade {
     background-image: -moz-linear-gradient(center bottom , #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
     bottom: -50px;height: 100px;left: 0;pointer-events: none;position: absolute;width: 100%;
 }
-table.wall-messages {width:100%;}
-table.wall-messages td {border-bottom:1px solid #999;height:25px;vertical-align:middle}
-table.wall-messages td.datetime {width:120px}
-table.wall-messages td.button {text-align:right;white-space:nowrap}
+
+//table.wall-messages {width:100%;}
+table.wall-messages td { vertical-align:middle; }
+table.wall-messages td.datetime { width:100px; }
+//table.wall-messages td.button {text-align:right;white-space:nowrap}
 
 .people_verified {padding-left:20px;line-height:21px;background: url("/img/people_verified.png") no-repeat scroll left center #fff;}
 //.people_not_verified {padding-left:20px;line-height:21px;background: url("/img/people_not_verified.png") no-repeat scroll left center #fff;}
@@ -282,7 +296,7 @@ div.dataset table.onebooking td.dataset {border:0;}
 a.translate {float: right;padding: 4px;}
 
 //div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 10px}
-div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 0;width:100%}
+//div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 0;width:100%}
 
 a.bookingconfirmed {background: url("/img/next_b.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);color: #000000;display: block;font-size: 16px;margin-top: 10px;padding: 0 40px 0 0;text-align: right;width: 145px;}
 
