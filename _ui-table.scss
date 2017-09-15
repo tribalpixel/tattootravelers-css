@@ -146,6 +146,7 @@
   }
   .ui.table:not(.unstackable) tbody,
   .ui.table:not(.unstackable) tr,
+  .ui:not(.table.wall-messages) tr,
   .ui.table:not(.unstackable) tr > th,
   .ui.table:not(.unstackable) tr > td {
     width: auto !important;

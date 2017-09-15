@@ -113,7 +113,12 @@ div.legal table td{width:33%;padding:10px;border:1px solid #ccc;vertical-align:m
     z-index: 100;
 }
 //#cbyPop1 div.resume li {float:left;margin-right:10px;max-width: 450px;line-height:1.2em}
-#cbyPop1 div.resume li {float:left;margin-right:10px;max-width: 280px;line-height:1.2em}
+#cbyPop1 div.resume li {
+    float:left;
+    margin-right:10px;
+    //max-width: 280px;
+    //line-height:1.2em
+}
 #cbyPop1 div.resume li li{float:none}
 #cbyPop1 div.resume li ul{margin-left:20px}
 //#cbyPop1 div.resume h4{margin-bottom:3px}
@@ -155,11 +160,11 @@ div.loading-compact {width:100%;min-height:40px;background-image: url("/img/data
 ul.people1 li{
     float:left;
     margin-right:10px;
-    max-width:185px;
+    //max-width:185px;
     //overflow:hidden;     
     //white-space:nowrap
 }
-ul.people1 li.large-display{max-width:240px;}
+//ul.people1 li.large-display{max-width:240px;}
 ul.people1 li h2{margin-top:5px}
 //div#list_artist img.highlight{transform: scale(1.1,1.1);box-shadow: 0px 0px 8px #000;}
 
@@ -298,7 +303,7 @@ a.translate {float: right;padding: 4px;}
 //div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 10px}
 //div.highlight.full {font-weight:bold;min-width:4em;text-align:center;display:inline-block;padding:3px 0;width:100%}
 
-a.bookingconfirmed {background: url("/img/next_b.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);color: #000000;display: block;font-size: 16px;margin-top: 10px;padding: 0 40px 0 0;text-align: right;width: 145px;}
+//a.bookingconfirmed {background: url("/img/next_b.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);color: #000000;display: block;font-size: 16px;margin-top: 10px;padding: 0 40px 0 0;text-align: right;width: 145px;}
 
 div.mywall div.countdown {display:inline-block}
 

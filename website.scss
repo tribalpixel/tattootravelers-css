@@ -1,9 +1,9 @@
 @import url(http://allfont.net/allfont.css?fonts=open-sans);
 @import url(http://allfont.net/allfont.css?fonts=open-sans-bold);
-@import url(http://allfont.net/allfont.css?fonts=capture-it);
+@import url(http://allfont.net/allfont.css?fonts=open-sans-condensed-bold);
 
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
-
+//@import url('https://fonts.googleapis.com/css?family=Oswald:600&subset=cyrillic,latin-ext');
 
 $website_max_with:1200px;
 $breakpoint_tablet: 767px;
@@ -13,13 +13,15 @@ $breakpoint_mobile_small: 375px;
 //$card-width: 24rem;
 $card-width: 25rem;
 
-$block_margin: 1rem 0.5rem;
+$block_margin: 1rem 0.5rem; 
 $padding: 0.25rem;
 $link_padding: 0.25rem;
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //  OLD CSS
 ////////////////////////////////////////////////////////////////////////////////
+
 @import "_beta";
 @import "_mixins";
 @import "_normalize";
@@ -76,16 +78,20 @@ h1,h2,h3,h4,h5,h6 {
     font-style: normal;
     font-weight: normal;
     margin: 0.25rem 0;
-
+    //margin: 0 0 1.5rem 0;
     //display: inline;
 
     span {
         color:#aaa;
         font-size: small;
     }
+    em,i {
+        font-style: normal;
+        font-weight: normal;   
+    }
 }
 
-strong, em, b {
+strong, b {
     font-family: 'Open Sans Bold', sans-serif;  
     font-style: normal;
     font-weight: normal;
@@ -239,6 +245,7 @@ a.hover:hover { opacity:1 }
     position:absolute;
     top:-6px;
     right:0;
+    z-index: 399;
 
     * { text-transform: uppercase; }
 
@@ -296,14 +303,14 @@ a.hover:hover { opacity:1 }
 
     #cbyLangMenu { 
         input { font-size: smaller; width:59px !important }
-        padding: 0.25em;
+        padding: 0.5em;
         margin: 0 0 0 10px;
         font-size: smaller;
     } 
 
     #cbyUserInfos {
         padding: 0.125rem;
-        top: -3px;
+        top: 0px;
         right:110px;
         font-size: smaller;   
     }
@@ -331,9 +338,9 @@ a.hover:hover { opacity:1 }
 
     #cbyLangMenu {
         position:fixed;
-        top:3px;
+        top:0px;
         right:16px;
-        z-index: 299;
+        padding: 0.36em; 
     }
 
 }
@@ -357,53 +364,51 @@ a.hover:hover { opacity:1 }
 .slide {
     position: relative;
     color: #FFF;
-
-    //font-weight: bold;
-    text-shadow: 5px 5px rgba(0,0,0,.75);
     border-radius: 5px;
     overflow: hidden;
-    //width:100%;
-    //padding: 1rem;
-    //min-height: 360px;
-    //overflow: hidden;
+    text-shadow: 3px 3px rgba(0,0,0,.75);
+
+
+}
+
+.slide-bg {
+    position: absolute;
+    top:20%;
+    left:0;
+
+    padding: 2em 1em 2em 2em;
+    background: rgba(0,0,0,.50);
 }
 
 .slide-header { 
-    position: absolute; 
-    top:14%; 
-    left:7%; 
-    margin-right: 7%!important;
-    h2 { font-family: 'Capture it', sans-serif; font-size: 2.75rem; }
-
+    color: orange;
+    h2 { 
+        font-family: 'Open Sans Condensed Bold', sans-serif;
+        font-size: 3.5rem; 
+        font-weight: bold;
+    }
 }
 .slide-text { 
-    position: absolute; 
-    bottom:14%; 
-    right:7%; 
-    margin-left: 7%!important;
-    text-align:right; 
-    font-family: 'Capture it', sans-serif;
     font-size: 1.5rem;
 }
 @media only screen and (max-width: $breakpoint_tablet) {
+    .slide {    
+        text-shadow: 2px 2px rgba(0,0,0,.75);
+    }
     .slide-header{ 
-        h2 { font-size: 1.75rem; }
+        h2 { font-size: 2.25rem; }
     }
     .slide-text { font-size: 1rem; }   
 }
 @media only screen and (max-width: $breakpoint_mobile) { 
-    .slide {
-        text-shadow: 2px 2px rgba(0,0,0,.75);
-        font-size: 1em; 
+    .slide {    
+        text-shadow: 1px 1px rgba(0,0,0,.75);
     }
+    .slide-bg { padding: 1em 0.5em 1em 1em;}
     .slide-header{ 
-        left:20px; 
-        margin-right: 20px!important;
-        h2 { font-size: 1.25rem; }
+        h2 { font-size: 1.5rem; }
     }
     .slide-text { 
-        right:20px;
-        margin-left: 20px!important;
         font-size: 0.75rem; 
     }
 }
@@ -414,7 +419,7 @@ a.hover:hover { opacity:1 }
 .origin i.flag { 
     width:8px;
     position: relative;
-    left:-20px;
+    left:-18px;
     top:12px; 
     margin:0;
     padding:0;
@@ -463,9 +468,36 @@ ui.button,
     margin:0.2em;
 }
 
+.people {
+    display:inline-block;
+    .small {
+        font-size: smaller;
+    }
+}
+
+ul.people1 {
+    display:inline-block;
+    //padding: 0.5em;
+    width:100%;
+
+    li > div {
+        padding: 3px 0;
+    }
+}
 
 @media only screen and (max-width: $breakpoint_tablet) {
     .computer-only { display:none !important; }
+}
+
+ul.bigList {
+    margin:1em;
+    padding: 0;
+    li {
+        list-style: disc;
+        list-style-position: inside;  
+        padding:0;
+        margin: 2px 0;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -493,27 +525,27 @@ ui.button,
 // POPUP FIXES
 ////////////////////////////////////////////////////////////////////////////////
 @media screen and (max-width: $breakpoint_mobile) {
-    
-   div.logo { 
-       //img { width:150px; } 
-       img { display:none !important; } 
-   }
-   
-   div.media_convention div.field_image img, 
-   div.media_studio div.field_image img, 
-   div.media_artist div.field_image img, 
-   div.media_fan div.field_image img, 
-   { 
-       width: 150px; 
-   }
-   
-   div.resume {
-       //ul.people2 li:first-child img { height: 130px !important; }
-       ul.people2 li:first-child img { display:none !important; }
-       ul.people2 li h2 { font-size: 1.25em; }
-       ul.people2 li h2:first-child { padding-top: 10px; font-size: 1.5em; }
-       ul.people2 li h4.space { margin: 3px 0; }
-   }
+
+    div.logo { 
+        //img { width:150px; } 
+        img { display:none !important; } 
+    }
+
+    div.media_convention div.field_image img, 
+    div.media_studio div.field_image img, 
+    div.media_artist div.field_image img, 
+    div.media_fan div.field_image img, 
+    { 
+        width: 150px; 
+    }
+
+    div.resume {
+        //ul.people2 li:first-child img { height: 130px !important; }
+        ul.people2 li:first-child img { display:none !important; }
+        ul.people2 li h2 { font-size: 1.25em; }
+        ul.people2 li h2:first-child { padding-top: 10px; font-size: 1.5em; }
+        ul.people2 li h4.space { margin: 3px 0; }
+    }
 }
 @media screen and (min-width: $breakpoint_tablet) {
     #cbyPop1 {
