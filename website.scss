@@ -128,9 +128,6 @@ a.nodeco:hover { text-decoration: none; }
 a.hover { opacity:0.5 }
 a.hover:hover { opacity:1 }
 
-.hidden {
-    display:none !important;
-}
 
 @media only screen and (max-width: $breakpoint_tablet) {
     h1,h2,h3,h4,h5,h6 { font-size:1em; }  
@@ -460,6 +457,12 @@ ui.button,
         font-size: 0.75em;
     }
 }
+
+.ui.cards > .card img.avatar, .ui.cards > .card .avatar img, .ui.card img.avatar, .ui.card .avatar img {
+    margin: 0 0 0.175rem 0;
+}
+
+
 .ui.labels > .label {
     margin: 0em 0.25em 0.25em 0em;
 }
@@ -546,11 +549,51 @@ ul.bigList {
         ul.people2 li h2:first-child { padding-top: 10px; font-size: 1.5em; }
         ul.people2 li h4.space { margin: 3px 0; }
     }
+
+    .ellipsis { 
+        white-space:normal;
+        overflow:visible;
+        text-overflow:normal;
+        max-width:none; 
+    }
+
 }
 @media screen and (min-width: $breakpoint_tablet) {
     #cbyPop1 {
-        max-width:700px;
+        max-width:740px;
         margin:auto;
     }
 }
 
+
+
+
+
+
+
+.hidden, 
+.mobile-only {
+    display:none !important;
+}
+
+@media screen and (max-width: $breakpoint_tablet) {
+    .mobile-only {
+        display:inline-block !important;
+    }
+    .ui.cards.gallery-nav > .card > .content {
+        padding:0 !important;
+        a { 
+            display:flex; 
+            //align-content: center;
+            align-items: center;
+            //justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        div { flex-direction: column; }
+        img { margin: 0 10px 0 0; }
+        h2 { font-size: 1.5em; }
+        //p { float: left;}
+    }
+ 
+}
