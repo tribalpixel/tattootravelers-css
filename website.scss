@@ -1,4 +1,5 @@
-@import url(http://allfont.net/allfont.css?fonts=open-sans);
+//@import url(http://allfont.net/allfont.css?fonts=open-sans);
+  @import url(http://fr.allfont.net/allfont.css?fonts=open-sans-light);
 @import url(http://allfont.net/allfont.css?fonts=open-sans-bold);
 @import url(http://allfont.net/allfont.css?fonts=open-sans-condensed-bold);
 
@@ -66,7 +67,7 @@ html {
 }
 body {
     //font-family: 'Open Sans', sans-serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Light', sans-serif;
     font-size: 1em;
     //text-align: justify;
     margin:0;
@@ -90,6 +91,10 @@ h1,h2,h3,h4,h5,h6 {
         font-weight: normal;   
     }
 }
+
+
+h2 { font-size: 1.325em }
+h4 { font-size: 0.925em; }
 
 strong, b {
     font-family: 'Open Sans Bold', sans-serif;  
@@ -118,6 +123,11 @@ a {
 
     &:hover { text-decoration: underline; }
 }
+a.no-deoration:hover { text-decoration: none; }
+
+table {
+    border: none;
+}
 
 small {
     color:#aaa;
@@ -130,7 +140,11 @@ a.hover:hover { opacity:1 }
 
 
 @media only screen and (max-width: $breakpoint_tablet) {
-    h1,h2,h3,h4,h5,h6 { font-size:1em; }  
+    //h1,h2,h3,h4,h5,h6 { font-size:1em; }  
+    //h1,h2,h3,h4,h5,h6 { font-size:smaller; }  
+    .home-title { 
+        font-size: 1.125em;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -325,6 +339,7 @@ a.hover:hover { opacity:1 }
 
 .block .content {
     margin-top:1em;
+    font-size: smaller;
 }
 
 @media only screen and (max-width: $breakpoint_tablet) {
@@ -353,10 +368,11 @@ a.hover:hover { opacity:1 }
     }
     //#cbyContent > div > div.contentRight.ten.wide.column > div > div > div.block.availability > div.content > div.not > div > table > tbody > tr > td:nth-child(2) { display:none; }
     table.booking-availability > tbody > tr > td:first-child img { display:none !important; }
-    table.booking-availability > tbody > tr > td:nth-child(2) { display:none !important; }
     div.cbyDataset  { font-size: smaller; }
 }
-
+@media only screen and (max-width: $breakpoint_tablet) {
+    table.booking-availability > tbody > tr > td:nth-child(2) { display:none !important; }
+}
 
 .slide {
     position: relative;
@@ -446,7 +462,8 @@ ui.button,
     vertical-align: middle;
     margin:0 0 0 -0.5em;
     min-height: 1.25em;
-    max-width: 80%;
+    //max-width: 80%;
+    max-width: 200px;
 
     span {
         margin:0;
@@ -503,6 +520,8 @@ ul.bigList {
     }
 }
 
+div.dataset.forgetpasswd { margin-top: 3em;}
+
 ////////////////////////////////////////////////////////////////////////////////
 // NAVIGATION / FOOTER
 ////////////////////////////////////////////////////////////////////////////////
@@ -534,42 +553,82 @@ ul.bigList {
         img { display:none !important; } 
     }
 
-    div.media_convention div.field_image img, 
-    div.media_studio div.field_image img, 
-    div.media_artist div.field_image img, 
-    div.media_fan div.field_image img, 
-    { 
-        width: 150px; 
-    }
-
     div.resume {
         //ul.people2 li:first-child img { height: 130px !important; }
         ul.people2 li:first-child img { display:none !important; }
-        ul.people2 li h2 { font-size: 1.25em; }
-        ul.people2 li h2:first-child { padding-top: 10px; font-size: 1.5em; }
+        //ul.people2 li h2 { font-size: 1.25em; }
+        // ul.people2 li h2:first-child { font-size: 1.5em; }
         ul.people2 li h4.space { margin: 3px 0; }
     }
 
     .ellipsis { 
         white-space:normal;
         overflow:visible;
-        text-overflow:normal;
+        text-overflow:initial;
         max-width:none; 
     }
 
 }
 @media screen and (min-width: $breakpoint_tablet) {
     #cbyPop1 {
-        max-width:740px;
+        max-width:720px;
         margin:auto;
+    }
+
+}
+
+#cbyPop1 .people { display:block; }
+
+div.resume { 
+    
+    h2 {
+        font-size: 1.125em;
+        &:first-child {font-size:1.5em; }
+    }
+    
+    h4 { margin: 0.125em 0; }
+}
+
+
+table.booking-availability {
+    //font-size: smaller;
+}
+
+table.booking-availability tr.info ul.people1 li:nth-child(2) div {
+    overflow: hidden;
+    max-width: 210px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    //border:1px solid red;
+}
+@media screen and (max-width: $breakpoint_mobile_small) {
+
+    table.booking-availability tr.info ul.people1 li:nth-child(2) div {
+        max-width: 150px;
     }
 }
 
 
+ul.people1 li.small-lines > div {
+    margin:0;
+    padding:0;
+}
+@media screen and (max-width: $breakpoint_tablet) {
+    #cbyPop1 div.resume li {
+        max-width: 280px;
+        //font-size: smaller;
+    }
 
-
-
-
+    #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_tattoo > div.content > ul > li > div.field_image > a > img, 
+    #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_studio > div.content > ul > li > div.field_image > a > img, 
+    #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_artist > div.content > ul > li > div.field_image > a > img, 
+    #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_fan > div.content > ul > li > div.field_image > a > img, 
+    #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_convention > div.content > ul > li > div.field_image > a > img, 
+    {
+       width: 74px !important;  
+    }
+}
 
 .hidden, 
 .mobile-only {
@@ -589,11 +648,11 @@ ul.bigList {
             //justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         div { flex-direction: column; }
         img { margin: 0 10px 0 0; }
-        h2 { font-size: 1.5em; }
+        h2 { font-size: 1.35em; }
         //p { float: left;}
     }
- 
-}
+
+} 
