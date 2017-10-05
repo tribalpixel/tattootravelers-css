@@ -1,11 +1,3 @@
-//@import url(http://allfont.net/allfont.css?fonts=open-sans);
-  @import url(http://fr.allfont.net/allfont.css?fonts=open-sans-light);
-@import url(http://allfont.net/allfont.css?fonts=open-sans-bold);
-@import url(http://allfont.net/allfont.css?fonts=open-sans-condensed-bold);
-
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
-//@import url('https://fonts.googleapis.com/css?family=Oswald:600&subset=cyrillic,latin-ext');
-
 $website_max_with:1200px;
 $breakpoint_tablet: 767px;
 $breakpoint_mobile: 425px;
@@ -67,7 +59,8 @@ html {
 }
 body {
     //font-family: 'Open Sans', sans-serif;
-    font-family: 'Open Sans Light', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     font-size: 1em;
     //text-align: justify;
     margin:0;
@@ -75,7 +68,8 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    //font-family: 'Capture it', sans-serif;  
+    //font-family: 'Capture it', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     margin: 0.25rem 0;
@@ -97,9 +91,8 @@ h2 { font-size: 1.325em }
 h4 { font-size: 0.925em; }
 
 strong, b {
-    font-family: 'Open Sans Bold', sans-serif;  
-    font-style: normal;
-    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;  
+    font-weight: 600;
 }
 
 hr {
@@ -282,6 +275,13 @@ a.hover:hover { opacity:1 }
 
 }
 
+#cbyLangMenu div.cbySelect {
+    right: 1px;
+    top: 32px;
+    border-radius: 0;
+    width: 136px;
+}
+
 .countries-list {     
     @include flexi-list-column-links(4);    
     @include hyperlinks();
@@ -355,6 +355,14 @@ a.hover:hover { opacity:1 }
         padding: 0.36em; 
     }
 
+
+    div.cbySelect {
+        right: 0px;
+        top: 24px;
+        width: 92px;
+        font-size: smaller;
+    }
+
 }
 
 @media only screen and (max-width: $breakpoint_mobile) {
@@ -369,6 +377,9 @@ a.hover:hover { opacity:1 }
     //#cbyContent > div > div.contentRight.ten.wide.column > div > div > div.block.availability > div.content > div.not > div > table > tbody > tr > td:nth-child(2) { display:none; }
     table.booking-availability > tbody > tr > td:first-child img { display:none !important; }
     div.cbyDataset  { font-size: smaller; }
+    .contentLeft, .contentRight { text-align: center; }
+    div.cbyDataset div.header { text-align: left;  }
+    h1,h2,h3 { text-align: center; }
 }
 @media only screen and (max-width: $breakpoint_tablet) {
     table.booking-availability > tbody > tr > td:nth-child(2) { display:none !important; }
@@ -380,8 +391,6 @@ a.hover:hover { opacity:1 }
     border-radius: 5px;
     overflow: hidden;
     text-shadow: 3px 3px rgba(0,0,0,.75);
-
-
 }
 
 .slide-bg {
@@ -396,7 +405,7 @@ a.hover:hover { opacity:1 }
 .slide-header { 
     color: orange;
     h2 { 
-        font-family: 'Open Sans Condensed Bold', sans-serif;
+        font-family: 'Open Sans Condensed', sans-serif;
         font-size: 3.5rem; 
         font-weight: bold;
     }
@@ -522,6 +531,25 @@ ul.bigList {
 
 div.dataset.forgetpasswd { margin-top: 3em;}
 
+li.ui-autocomplete-category {
+    margin:0.75em 0 0.125em 0.25em;
+}
+
+.small-colored {
+    font-size: smaller;
+    color:#f2711c;
+    padding: 0 1em;
+}
+@media only screen and (max-width: $breakpoint_mobile) {
+    .small-colored { padding:0; }
+}
+
+#mywall {
+    .datetime {
+        //font-size: smaller;
+        vertical-align: top;
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////
 // NAVIGATION / FOOTER
 ////////////////////////////////////////////////////////////////////////////////
@@ -580,15 +608,16 @@ div.dataset.forgetpasswd { margin-top: 3em;}
 #cbyPop1 .people { display:block; }
 
 div.resume { 
-    
+
     h2 {
         font-size: 1.125em;
         &:first-child {font-size:1.5em; }
     }
-    
+
     h4 { margin: 0.125em 0; }
 }
 
+//.fancybox-skin { text-align: center; }
 
 table.booking-availability {
     //font-size: smaller;
@@ -626,7 +655,7 @@ ul.people1 li.small-lines > div {
     #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_fan > div.content > ul > li > div.field_image > a > img, 
     #cbyPop1 > div.cbyDataset.dataset.people_details > div > div.block.media_convention > div.content > ul > li > div.field_image > a > img, 
     {
-       width: 74px !important;  
+        width: 74px !important;  
     }
 }
 
