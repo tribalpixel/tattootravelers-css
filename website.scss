@@ -42,6 +42,7 @@ $link_padding: 0.25rem;
 @import "_ui-popup";
 @import "_ui-divider";
 @import "_ui-table"; 
+@import "_ui-list"; 
 
 .ui.divider {
     font-weight: normal;
@@ -137,6 +138,7 @@ a.hover:hover { opacity:1 }
     //h1,h2,h3,h4,h5,h6 { font-size:smaller; }  
     .home-title { 
         font-size: 1.125em;
+        text-align: left;
     }
 }
 
@@ -399,7 +401,9 @@ a.hover:hover { opacity:1 }
 .slide-bg {
     position: absolute;
     top:15%;
-    left:0;
+    //bottom:15%;
+    left:5%;
+    right:5%;
 
     padding: 2em 1em 2em 2em;
     background: rgba(0,0,0,.50);
@@ -409,15 +413,16 @@ a.hover:hover { opacity:1 }
 
     h2,span { 
         font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 3.5rem; 
+        font-size: 3rem; 
         font-weight: bold;
         color: orange;
-        text-align: left;
+        text-align: center;
         word-break: keep-all;
     }
 }
 .slide-text { 
     font-size: 1.5rem;
+    text-align: center;
 }
 @media only screen and (max-width: $breakpoint_tablet) {
     .slide {    
@@ -425,8 +430,8 @@ a.hover:hover { opacity:1 }
     }
     .slide-bg { top:12%; padding: 1em 0.5em 1em 1em;}
     .slide-header{ 
-        h2 { font-size: 2.25rem; }
-        span{ font-size: 1.75rem !important; }
+        h2 { font-size: 2rem; }
+        span{ font-size: 2rem !important; }
     }
     .slide-text { font-size: 1rem; }   
 }
@@ -437,7 +442,7 @@ a.hover:hover { opacity:1 }
     .slide-bg { top:10%; padding: 1em 0.5em 1em 1em;}
     .slide-header{ 
         h2{ font-size: 1.5rem; }
-        span{ font-size: 1.25rem!important; }
+        span{ font-size: 1.5rem!important; }
     }
     .slide-text { 
         font-size: 0.75rem; 
@@ -447,8 +452,8 @@ a.hover:hover { opacity:1 }
 @media only screen and (max-width: $breakpoint_mobile_small) { 
     .slide-bg { top:8%; padding: 0.75em 0.5em 0.75em 0.75em;}
     .slide-header{ 
-        h2{ font-size: 1.425rem; }
-        span{ font-size: 1.125rem!important; }
+        h2{ font-size: 1.25rem; }
+        span{ font-size: 1.25rem!important; }
     }
     .slide-text { 
         display:none !important;
@@ -476,11 +481,12 @@ ui.button,
 { border-radius: 0!important; }
 
 
-.ui.card, .ui.cards {
-
+@media only screen and (max-width: $breakpoint_mobile) { 
+    div.centered-on-mobile {
+        text-align: center;
+        margin:5px 0;
+    }
 }
-
-
 .ui.cards > .card > .content > .header:not(.ui), 
 .ui.card > .content > .header:not(.ui) {
     line-height: 1em;
